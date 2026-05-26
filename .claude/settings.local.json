@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(node -e \"require\\('./node_modules/firebase/package.json'\\); console.log\\('firebase ok'\\)\")",
+      "Bash(Get-ChildItem -Path \"e:\\\\11th Consulting\\\\BackBonz Web\\\\src\\\\components\\\\layout\\\\\" -ErrorAction SilentlyContinue)",
+      "Bash(ls -la \"e:\\\\\\\\11th Consulting\\\\\\\\BackBonz Web\\\\\\\\src\\\\\\\\components\\\\\\\\ui\\\\\\\\\")",
+      "Bash(ls -la \"e:\\\\\\\\11th Consulting\\\\\\\\BackBonz Web\\\\\\\\src\\\\\\\\components\\\\\\\\layout\\\\\\\\\")",
+      "Bash(ls -la \"e:\\\\\\\\11th Consulting\\\\\\\\BackBonz Web\\\\\\\\src\\\\\\\\pages\\\\\\\\\")"
+    ]
+  }
+}

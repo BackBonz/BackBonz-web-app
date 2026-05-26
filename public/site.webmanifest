@@ -1,0 +1,30 @@
+{
+  "name": "BackBonz",
+  "short_name": "BackBonz",
+  "description": "Brace tracking for teens with scoliosis",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F8F8F6",
+  "theme_color": "#EA92CB",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "type": "image/png",
+      "sizes": "180x180",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon-32x32.png",
+      "type": "image/png",
+      "sizes": "32x32",
+      "purpose": "any"
+    }
+  ]
+}

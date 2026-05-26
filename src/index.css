@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+/* ── BackBonz Design System (Tailwind v4 theme) ────────────────────── */
+@theme {
+  /* Brand core */
+  --color-rebel-pink: #EA92CB;
+  --color-denim: #1455B3;
+  --color-yoke: #F9E88A;
+  --color-true-brown: #B46E23;
+  --color-cherry-red: #EF5C3F;
+
+  /* Surface */
+  --color-background: #F8F8F6;
+  --color-divider: #DADADA;
+
+  /* Foreground / text */
+  --color-foreground: #010003;
+  --color-foreground-secondary: #343335;
+  --color-foreground-tertiary: #676668;
+  --color-foreground-muted: #99999A;
+
+  /* Extended pink */
+  --color-rebel-pink-300: #EEA8D3;
+  --color-rebel-pink-200: #F2BEDE;
+  --color-rebel-pink-100: #F7D3E9;
+
+  /* Extended blue */
+  --color-denim-400: #4377C2;
+  --color-denim-300: #7299D1;
+
+  /* Extended yellow */
+  --color-yoke-300: #FAEDA1;
+  --color-yoke-200: #FBF1B9;
+  --color-yoke-100: #FDF6D0;
+
+  /* Extended brown */
+  --color-true-brown-300: #C3884F;
+  --color-true-brown-200: #D2A87B;
+  --color-true-brown-100: #E1C5A7;
+
+  /* Extended red */
+  --color-cherry-red-300: #F27D65;
+  --color-cherry-red-200: #F59D8C;
+  --color-cherry-red-100: #F9BEB2;
+
+  /* Font families (fallback to rounded system fonts until custom fonts drop) */
+  --font-sans: "Bianco Sans", ui-rounded, "Segoe UI", system-ui, sans-serif;
+  --font-display: "Plakat", "Bianco Sans", ui-rounded, system-ui, sans-serif;
+  --font-fun: "HeadSurgery", "Plakat", ui-rounded, system-ui, sans-serif;
+
+  /* Type scale */
+  --text-title-1: 2rem;
+  --text-title-2: 1.75rem;
+  --text-title-3: 1.5rem;
+  --text-title-4: 1.25rem;
+  --text-title-5: 1.125rem;
+  --text-body-lg: 1.125rem;
+  --text-body: 1rem;
+}
+
+/* ── Animated hero gradient ─────────────────────────────────────────── */
+@keyframes hero-gradient {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.hero-gradient {
+  background: linear-gradient(-45deg, #F7D3E9, #FBF1B9, #F8F8F6, #F2BEDE, #FDF6D0);
+  background-size: 400% 400%;
+  animation: hero-gradient 18s ease infinite;
+}
+
+/* ── Respect prefers-reduced-motion ─────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .hero-gradient { animation: none; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ── Base ───────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Visible focus ring using denim */
+:focus-visible {
+  outline: 3px solid var(--color-denim);
+  outline-offset: 3px;
+  border-radius: 6px;
+}

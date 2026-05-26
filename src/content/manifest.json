@@ -1,0 +1,14 @@
+{
+  "privacy": {
+    "type": "md",
+    "src": "/content/privacy.md",
+    "title": "Privacy Policy",
+    "updatedAt": "2026-05-01"
+  },
+  "userAgreement": {
+    "type": "md",
+    "src": "/content/user-agreement.md",
+    "title": "User Agreement",
+    "updatedAt": "2026-05-01"
+  }
+}

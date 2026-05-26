@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F7D3E9"/>
+      <stop offset="50%" stop-color="#FBF1B9"/>
+      <stop offset="100%" stop-color="#F2BEDE"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Decorative fish (top-right) -->
+  <g transform="translate(960,80) scale(2.2)" opacity="0.35">
+    <path d="M72 30 C88 12 100 4 100 4 L94 30 L100 56 C100 56 88 48 72 30 Z" fill="#D97AB5" opacity="0.9"/>
+    <ellipse cx="40" cy="30" rx="36" ry="23" fill="#EA92CB"/>
+    <ellipse cx="29" cy="24" rx="13" ry="7.5" fill="#F7D3E9" opacity="0.45"/>
+    <circle cx="16" cy="27" r="4.5" fill="white"/>
+    <circle cx="17" cy="27" r="2.6" fill="#010003"/>
+  </g>
+
+  <!-- Decorative fish (bottom-left) -->
+  <g transform="translate(80,440) scale(1.6)" opacity="0.25">
+    <path d="M72 30 C88 12 100 4 100 4 L94 30 L100 56 C100 56 88 48 72 30 Z" fill="#4377C2" opacity="0.9"/>
+    <ellipse cx="40" cy="30" rx="36" ry="23" fill="#7299D1"/>
+    <ellipse cx="29" cy="24" rx="13" ry="7.5" fill="#C2D3ED" opacity="0.45"/>
+    <circle cx="16" cy="27" r="4.5" fill="white"/>
+    <circle cx="17" cy="27" r="2.6" fill="#010003"/>
+  </g>
+
+  <!-- Logo fish glyph -->
+  <g transform="translate(200,200) scale(3.5)">
+    <path d="M72 30 C88 12 100 4 100 4 L94 30 L100 56 C100 56 88 48 72 30 Z" fill="#D97AB5" opacity="0.9"/>
+    <ellipse cx="40" cy="30" rx="36" ry="23" fill="#EA92CB"/>
+    <ellipse cx="29" cy="24" rx="13" ry="7.5" fill="#F7D3E9" opacity="0.5"/>
+    <circle cx="16" cy="27" r="4.5" fill="white"/>
+    <circle cx="17" cy="27" r="2.6" fill="#010003"/>
+    <circle cx="18" cy="26" r="1" fill="white" opacity="0.85"/>
+  </g>
+
+  <!-- BackBonz wordmark -->
+  <text x="560" y="260" font-family="ui-rounded, system-ui, sans-serif" font-weight="700" font-size="96" fill="#010003" text-anchor="middle">BackBonz</text>
+
+  <!-- Tagline -->
+  <text x="560" y="340" font-family="ui-rounded, system-ui, sans-serif" font-weight="400" font-size="36" fill="#343335" text-anchor="middle">Brace tracking for teens with scoliosis</text>
+
+  <!-- Sub-tagline pill -->
+  <rect x="380" y="390" width="360" height="52" rx="26" fill="#EA92CB" opacity="0.25"/>
+  <text x="560" y="423" font-family="ui-rounded, system-ui, sans-serif" font-weight="600" font-size="22" fill="#1455B3" text-anchor="middle">Coming June 2026 · iOS &amp; Android</text>
+</svg>

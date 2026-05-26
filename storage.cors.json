@@ -1,0 +1,8 @@
+[
+  {
+    "origin": ["http://localhost:5173", "https://backbonz.com", "https://backbonz-f5214.web.app", "https://backbonz-f5214.firebaseapp.com"],
+    "method": ["GET", "HEAD"],
+    "responseHeader": ["Content-Type", "Content-Disposition"],
+    "maxAgeSeconds": 3600
+  }
+]
