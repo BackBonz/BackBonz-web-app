@@ -374,7 +374,7 @@ contact form writes directly to Firestore, so `api/contact.js` is not used here.
 1. Repo → **Settings → Pages → Build and deployment → Source = "GitHub Actions"**.
 2. Push to `main` (or run the workflow manually from the Actions tab).
 
-The site publishes at `https://<owner>.github.io/BackBonz-web-app/`.
+The site publishes at `https://backbonz.github.io/BackBonz-web-app/`.
 
 **Sub-path config:** because Pages serves from a `/BackBonz-web-app/` sub-path,
 `vite.config.js` sets `base` for builds and the router reads it via
