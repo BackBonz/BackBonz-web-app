@@ -4,10 +4,11 @@ import PageShell from '../components/layout/PageShell'
 import { Seo } from '../lib/seo/Seo'
 import { DocumentViewer } from '../lib/markdown/DocumentViewer'
 import { getActive } from '../lib/uploads/documentsRepo'
+import { withBase } from '../lib/format'
 
 export default function UserAgreement() {
   // Start with the local file immediately — no loading spinner, instant render
-  const [doc, setDoc] = useState(manifest.userAgreement)
+  const [doc, setDoc] = useState({ ...manifest.userAgreement, src: withBase(manifest.userAgreement.src) })
 
   useEffect(() => {
     getActive('userAgreement')

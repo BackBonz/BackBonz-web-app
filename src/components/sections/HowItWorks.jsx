@@ -4,6 +4,7 @@ import { SectionHeading } from '../ui/SectionHeading'
 import { Fish } from '../ui/illustrations/Fish'
 import { LottiePlayer } from '../ui/LottiePlayer'
 import { staggerContainer, cardReveal } from '../../lib/motion'
+import { withBase } from '../../lib/format'
 
 function PhoneFrame({ src, alt }) {
   return (
@@ -40,14 +41,14 @@ const steps = [
     cardBg: 'bg-rebel-pink-100/70',
     title: 'Put on your brace',
     body: 'Tap once the moment you strap in. BackBonz logs your wear time automatically — no journaling, no fuss.',
-    visual: <PhoneFrame src="/images/home_screen.png" alt="BackBonz home screen showing the brace timer" />,
+    visual: <PhoneFrame src={withBase('images/home_screen.png')} alt="BackBonz home screen showing the brace timer" />,
   },
   {
     number: '02',
     cardBg: 'bg-denim-300/10',
     title: 'Watch your progress stack up',
     body: 'Daily, weekly, and monthly charts show exactly where you stand — share-ready for your next ortho visit.',
-    visual: <PhoneFrame src="/images/entries_screen.png" alt="BackBonz entries screen showing wear-time history" />,
+    visual: <PhoneFrame src={withBase('images/entries_screen.png')} alt="BackBonz entries screen showing wear-time history" />,
   },
   {
     number: '03',
@@ -57,17 +58,17 @@ const steps = [
     visual: (
       <div className="relative flex flex-col items-center justify-center h-[calc(160px*19.5/9)] mx-auto gap-2" style={{ width: 160 }}>
         <LottiePlayer
-          src="/lottie/orange_fish_lottie.json"
+          src={withBase('lottie/orange_fish_lottie.json')}
           style={{ width: 140, height: 140 }}
           ariaLabel="Animated orange fish companion"
         />
         <LottiePlayer
-          src="/lottie/blue_fish_lottie.json"
+          src={withBase('lottie/blue_fish_lottie.json')}
           style={{ width: 140, height: 140 }}
           ariaLabel="Animated blue fish companion"
         />
         <LottiePlayer
-          src="/lottie/white_fish_lottie.json"
+          src={withBase('lottie/white_fish_lottie.json')}
           style={{ width: 140, height: 140 }}
           ariaLabel="Animated white fish companion"
         />
@@ -80,7 +81,7 @@ const steps = [
     cardBg: 'bg-cherry-red-100/50',
     title: 'Build streaks & earn badges',
     body: 'Unlock achievements, maintain streaks, and hit your daily wear goals. Brace day becomes a game you actually want to play.',
-    visual: <PhoneFrame src="/images/account_screen.png" alt="BackBonz account screen showing badges and streaks" />,
+    visual: <PhoneFrame src={withBase('images/account_screen.png')} alt="BackBonz account screen showing badges and streaks" />,
   },
 ]
 

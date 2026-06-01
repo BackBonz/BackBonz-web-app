@@ -357,6 +357,36 @@ npx vercel --prod
 
 ---
 
+## GitHub Pages Deployment (alternative, no secrets)
+
+The repo also ships a GitHub Actions workflow that builds and publishes the
+static SPA to **GitHub Pages** without any repository secrets.
+
+**How env works without secrets:** the build reads `.env.production` (committed).
+It contains only `VITE_*` values, which are client-side public by design (Vite
+inlines them into the bundle regardless of host; Firebase security is enforced by
+Auth + Firestore/Storage rules). Server-only keys (`RESEND_API_KEY`,
+`RECAPTCHA_SECRET_KEY`) are intentionally omitted — Pages is static-only and the
+contact form writes directly to Firestore, so `api/contact.js` is not used here.
+
+**One-time setup:**
+
+1. Repo → **Settings → Pages → Build and deployment → Source = "GitHub Actions"**.
+2. Push to `main` (or run the workflow manually from the Actions tab).
+
+The site publishes at `https://<owner>.github.io/BackBonz-web-app/`.
+
+**Sub-path config:** because Pages serves from a `/BackBonz-web-app/` sub-path,
+`vite.config.js` sets `base` for builds and the router reads it via
+`import.meta.env.BASE_URL` (in `main.jsx`). Public assets referenced from JS use
+the `withBase()` helper (`src/lib/format.js`). The workflow also copies
+`index.html` → `404.html` so client-side routes work on direct navigation.
+
+> If you later move to a custom domain (e.g. `backbonz.com`), set `base: '/'` in
+> `vite.config.js` and add a `public/CNAME` file containing the domain.
+
+---
+
 ## Environment Variables Reference
 
 ```bash
