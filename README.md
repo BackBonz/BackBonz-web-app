@@ -374,16 +374,18 @@ contact form writes directly to Firestore, so `api/contact.js` is not used here.
 1. Repo → **Settings → Pages → Build and deployment → Source = "GitHub Actions"**.
 2. Push to `main` (or run the workflow manually from the Actions tab).
 
-The site publishes at `https://backbonz.github.io/BackBonz-web-app/`.
+The site publishes at the custom domain **`https://backbonz.app/`** (served from
+the root). `public/CNAME` holds the domain so it persists across every deploy.
 
-**Sub-path config:** because Pages serves from a `/BackBonz-web-app/` sub-path,
-`vite.config.js` sets `base` for builds and the router reads it via
-`import.meta.env.BASE_URL` (in `main.jsx`). Public assets referenced from JS use
-the `withBase()` helper (`src/lib/format.js`). The workflow also copies
+**Config notes:** `vite.config.js` uses `base: '/'`; the router reads it via
+`import.meta.env.BASE_URL` (in `main.jsx`) and public assets referenced from JS
+use the `withBase()` helper (`src/lib/format.js`) — both are no-ops at the root,
+but keep the app portable if the base ever changes. The workflow copies
 `index.html` → `404.html` so client-side routes work on direct navigation.
 
-> If you later move to a custom domain (e.g. `backbonz.com`), set `base: '/'` in
-> `vite.config.js` and add a `public/CNAME` file containing the domain.
+> Custom domain DNS: an apex domain (`backbonz.app`) needs `A`/`AAAA` records to
+> GitHub Pages IPs (or `ALIAS`/`ANAME`); a `www` subdomain uses a `CNAME` to
+> `backbonz.github.io`. Keep "Enforce HTTPS" enabled in repo Settings → Pages.
 
 ---
 

@@ -1,6 +1,6 @@
 User-agent: *
 Allow: /
-Disallow: /BackBonz-web-app/admin
-Disallow: /BackBonz-web-app/admin/
+Disallow: /admin
+Disallow: /admin/
 
-Sitemap: https://backbonz.github.io/BackBonz-web-app/sitemap.xml
+Sitemap: https://backbonz.app/sitemap.xml

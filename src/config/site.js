@@ -3,7 +3,7 @@ export const SITE = {
   tagline: "Helping teens with scoliosis build confidence and healthy brace-wear habits.",
   description:
     "BackBonz helps teens with scoliosis build healthy brace-wear habits through tracking, motivation, and companion-based engagement.",
-  url: "https://backbonz.github.io/BackBonz-web-app",
+  url: "https://backbonz.app",
   // Fallback only — the live contact/support email is editable from the admin
   // panel (see settingsRepo / useSettings).
   contactEmail: "support.backbonz@gmail.com",

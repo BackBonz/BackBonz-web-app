@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://backbonz.github.io/BackBonz-web-app/</loc>
+    <loc>https://backbonz.app/</loc>
     <lastmod>2026-05-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://backbonz.github.io/BackBonz-web-app/support</loc>
+    <loc>https://backbonz.app/support</loc>
     <lastmod>2026-05-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://backbonz.github.io/BackBonz-web-app/privacy</loc>
+    <loc>https://backbonz.app/privacy</loc>
     <lastmod>2026-05-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://backbonz.github.io/BackBonz-web-app/user-agreement</loc>
+    <loc>https://backbonz.app/user-agreement</loc>
     <lastmod>2026-05-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
