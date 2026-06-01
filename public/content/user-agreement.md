@@ -105,7 +105,7 @@ You are responsible for all content you submit. Do not include:
 You may delete your account at any time through:
 
 1. **In-app**: Settings → Account → Delete Account
-2. **Email request**: Send "Delete My Account" to [admin.backbonz@gmail.com](mailto:admin.backbonz@gmail.com)
+2. **Email request**: Send "Delete My Account" to [support.backbonz@gmail.com](mailto:support.backbonz@gmail.com)
 
 Upon account deletion:
 - All personal data will be deleted within **30 days**
@@ -121,7 +121,7 @@ For accounts belonging to children under 13, a parent or guardian must make the 
 You have the right to request a copy of your personal data ("data portability").
 
 To request a data export:
-1. Email [admin.backbonz@gmail.com](mailto:admin.backbonz@gmail.com) with the subject "Data Export Request"
+1. Email [support.backbonz@gmail.com](mailto:support.backbonz@gmail.com) with the subject "Data Export Request"
 2. Include the email address associated with your account
 3. We will provide your data in a common machine-readable format within **30 days**
 
@@ -185,6 +185,6 @@ This Agreement is governed by the laws of the applicable jurisdiction. Any dispu
 Questions about this Agreement? Contact us:
 
 **BackBonz**
-Email: [admin.backbonz@gmail.com](mailto:admin.backbonz@gmail.com)
+Email: [support.backbonz@gmail.com](mailto:support.backbonz@gmail.com)
 
 For account deletion, data export, or COPPA requests, please include the relevant request type in your email subject line.

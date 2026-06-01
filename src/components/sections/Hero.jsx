@@ -4,8 +4,15 @@ import { Button } from '../ui/Button'
 import { Badge } from '../ui/Badge'
 import { Container } from '../ui/Container'
 import { useCountdown } from '../../hooks/useCountdown'
+import { useSettings } from '../../lib/settings'
+import { formatLaunchMonthYear } from '../../lib/format'
 import { Fish } from '../ui/illustrations/Fish'
 import { fadeUp, fadeIn } from '../../lib/motion'
+
+function scrollToContact(e) {
+  e?.preventDefault()
+  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
+}
 
 /* ── Mini countdown unit ─────────────────────────────────────────── */
 function CountUnit({ value, label }) {
@@ -19,8 +26,8 @@ function CountUnit({ value, label }) {
   )
 }
 
-function CountdownMini() {
-  const { days, hours, minutes, seconds, isLive } = useCountdown()
+function CountdownMini({ launchDate }) {
+  const { days, hours, minutes, seconds, isLive } = useCountdown(launchDate)
 
   if (isLive) {
     return (
@@ -49,15 +56,17 @@ function CountdownMini() {
   )
 }
 
-/* ── App store placeholders ──────────────────────────────────────── */
-function AppBadge({ store }) {
+/* ── App store badge ─────────────────────────────────────────────── */
+function AppBadge({ store, href }) {
   const isApple = store === 'apple'
+  const label = isApple ? 'App Store' : 'Google Play'
   return (
-    <div
-      className="flex items-center gap-3 px-5 py-3 rounded-2xl border-2 border-divider bg-white/60 cursor-not-allowed opacity-60"
-      title="Coming soon"
-      role="img"
-      aria-label={`${isApple ? 'App Store' : 'Google Play'} — coming soon`}
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex items-center gap-3 px-5 py-3 rounded-2xl border-2 border-divider bg-white/80 hover:border-rebel-pink hover:shadow-md transition-all"
+      aria-label={`Download on the ${label}`}
     >
       {isApple ? (
         <Apple size={22} className="text-foreground" aria-hidden="true" />
@@ -65,18 +74,28 @@ function AppBadge({ store }) {
         <Smartphone size={22} className="text-foreground" aria-hidden="true" />
       )}
       <div className="text-left leading-tight">
-        <p className="text-[10px] text-foreground-tertiary">Coming soon on</p>
-        <p className="text-sm font-semibold text-foreground">
-          {isApple ? 'App Store' : 'Google Play'}
+        <p className="text-[10px] text-foreground-tertiary">
+          {isApple ? 'Download on the' : 'Get it on'}
         </p>
+        <p className="text-sm font-semibold text-foreground">{label}</p>
       </div>
-    </div>
+    </a>
   )
 }
 
 /* ── Hero ─────────────────────────────────────────────────────────── */
 export default function Hero() {
   const reduce = useReducedMotion()
+  const {
+    launchDate,
+    showAppStore, appStoreUrl,
+    showPlayStore, playStoreUrl,
+    showBeta,
+  } = useSettings()
+
+  const appleVisible = showAppStore && appStoreUrl
+  const googleVisible = showPlayStore && playStoreUrl
+  const anyBadge = appleVisible || googleVisible
 
   return (
     <section
@@ -97,7 +116,7 @@ export default function Hero() {
         >
           <Badge variant="pink">
             <Sparkles size={12} aria-hidden="true" />
-            Coming Soon — June 2026
+            Coming Soon — {formatLaunchMonthYear(launchDate)}
           </Badge>
         </motion.div>
 
@@ -136,20 +155,22 @@ export default function Hero() {
           aria-live="polite"
           aria-atomic="true"
         >
-          <CountdownMini />
+          <CountdownMini launchDate={launchDate} />
         </motion.div>
 
-        {/* App badges */}
-        <motion.div
-          variants={fadeUp(reduce)}
-          initial="hidden"
-          animate="visible"
-          transition={{ delay: 0.3 }}
-          className="flex flex-wrap justify-center gap-3"
-        >
-          <AppBadge store="apple" />
-          <AppBadge store="google" />
-        </motion.div>
+        {/* App badges — shown only when enabled from the admin panel */}
+        {anyBadge && (
+          <motion.div
+            variants={fadeUp(reduce)}
+            initial="hidden"
+            animate="visible"
+            transition={{ delay: 0.3 }}
+            className="flex flex-wrap justify-center gap-3"
+          >
+            {appleVisible && <AppBadge store="apple" href={appStoreUrl} />}
+            {googleVisible && <AppBadge store="google" href={playStoreUrl} />}
+          </motion.div>
+        )}
 
         {/* CTA */}
         <motion.div
@@ -159,15 +180,23 @@ export default function Hero() {
           transition={{ delay: 0.4 }}
           className="flex flex-wrap justify-center gap-3"
         >
+          {showBeta && (
+            <Button
+              as="a"
+              href="#contact"
+              variant="primary"
+              size="lg"
+              onClick={scrollToContact}
+            >
+              Join the Beta
+            </Button>
+          )}
           <Button
             as="a"
             href="#contact"
-            variant="primary"
+            variant={showBeta ? 'secondary' : 'primary'}
             size="lg"
-            onClick={(e) => {
-              e.preventDefault()
-              document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
-            }}
+            onClick={scrollToContact}
           >
             Get notified at launch
           </Button>

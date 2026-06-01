@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { Mail, ShieldCheck } from 'lucide-react'
 import { SITE } from '../../config/site'
+import { useSettings } from '../../lib/settings'
 
 function FishGlyphSmall() {
   return (
@@ -14,6 +15,7 @@ function FishGlyphSmall() {
 
 export default function Footer() {
   const year = new Date().getFullYear()
+  const { supportEmail } = useSettings()
 
   return (
     <footer className="bg-foreground text-white pt-12 pb-8" role="contentinfo">
@@ -37,7 +39,7 @@ export default function Footer() {
           {/* Links */}
           <nav aria-label="Footer navigation">
             <ul className="flex flex-wrap gap-x-6 gap-y-2" role="list">
-              {SITE.nav.map((item) => (
+              {SITE.footerNav.map((item) => (
                 <li key={item.to}>
                   <Link
                     to={item.to}
@@ -74,12 +76,12 @@ export default function Footer() {
             © {year} {SITE.name}. All rights reserved.
           </p>
           <a
-            href={`mailto:${SITE.contactEmail}`}
+            href={`mailto:${supportEmail}`}
             className="flex items-center gap-1.5 text-xs text-white/60 hover:text-rebel-pink transition-colors"
-            aria-label={`Send email to ${SITE.contactEmail}`}
+            aria-label={`Send email to ${supportEmail}`}
           >
             <Mail size={13} aria-hidden="true" />
-            {SITE.contactEmail}
+            {supportEmail}
           </a>
         </div>
       </div>

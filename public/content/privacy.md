@@ -81,7 +81,7 @@ Parents and guardians of children under 13 have the right to:
 - **Review** all personal information we have collected about their child
 - **Request deletion** of their child's account and all associated data
 - **Refuse further collection** of information at any time
-- **Withdraw consent** by contacting us at [admin.backbonz@gmail.com](mailto:admin.backbonz@gmail.com)
+- **Withdraw consent** by contacting us at [support.backbonz@gmail.com](mailto:support.backbonz@gmail.com)
 
 We will **never** condition a child's participation on disclosure of more personal information than is reasonably necessary.
 
@@ -96,7 +96,7 @@ All users' parents and guardians may:
 - Request deletion of the account and data
 - Object to certain data processing
 
-To exercise these rights, contact us at [admin.backbonz@gmail.com](mailto:admin.backbonz@gmail.com). We will respond within **30 days**.
+To exercise these rights, contact us at [support.backbonz@gmail.com](mailto:support.backbonz@gmail.com). We will respond within **30 days**.
 
 ---
 
@@ -150,7 +150,7 @@ We retain personal information for as long as the account is active or as needed
 
 Depending on your location, you may have rights under applicable privacy laws (including GDPR, CCPA, and others). These may include rights to access, correction, deletion, portability, and restriction of processing.
 
-To exercise any rights, contact: [admin.backbonz@gmail.com](mailto:admin.backbonz@gmail.com)
+To exercise any rights, contact: [support.backbonz@gmail.com](mailto:support.backbonz@gmail.com)
 
 ---
 
@@ -170,6 +170,6 @@ Your continued use of the Service after changes constitutes acceptance of the up
 If you have questions or concerns about this Privacy Policy, please contact:
 
 **BackBonz**
-Email: [admin.backbonz@gmail.com](mailto:admin.backbonz@gmail.com)
+Email: [support.backbonz@gmail.com](mailto:support.backbonz@gmail.com)
 
 For COPPA-related inquiries or to exercise parental rights, please use the same email address and include "COPPA Request" in the subject line.

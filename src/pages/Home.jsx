@@ -1,3 +1,5 @@
+import { useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import PageShell from '../components/layout/PageShell'
 import { Seo } from '../lib/seo/Seo'
@@ -21,7 +23,7 @@ const jsonLd = {
       description: SITE.description,
       url: SITE.url,
       image: `${SITE.url}/og-image.png`,
-      datePublished: '2026-06-10',
+      datePublished: '2026-06-30',
       author: { '@type': 'Organization', name: 'BackBonz', url: SITE.url },
       audience: { '@type': 'PeopleAudience', suggestedMinAge: 8, suggestedMaxAge: 18 },
     },
@@ -41,6 +43,18 @@ const jsonLd = {
 }
 
 export default function Home() {
+  const { hash } = useLocation()
+
+  // Scroll to a section when arriving via a hash link (e.g. /#contact).
+  useEffect(() => {
+    if (!hash) return
+    const id = hash.slice(1)
+    const t = setTimeout(() => {
+      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+    }, 100)
+    return () => clearTimeout(t)
+  }, [hash])
+
   return (
     <PageShell>
       <Seo path="/" />

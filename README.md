@@ -215,6 +215,38 @@ service firebase.storage {
 
 Replace `admin.backbonz@gmail.com` with the value of your `VITE_ADMIN_EMAIL`.
 
+### 4b. Apply Firestore Security Rules
+
+In Firebase Console → Firestore Database → Rules. `siteConfig` (editable settings)
+and `faqs` are **publicly readable** so the marketing site can render them, and
+**admin-only writable**. `contactMessages` is public-create, admin-only read.
+
+```
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isAdmin() {
+      return request.auth != null
+        && request.auth.token.email == "admin.backbonz@gmail.com";
+    }
+    match /contactMessages/{id} {
+      allow create: if true;
+      allow read, update, delete: if isAdmin();
+    }
+    match /siteConfig/{id} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+    match /faqs/{id} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+  }
+}
+```
+
+Replace `admin.backbonz@gmail.com` with the value of your `VITE_ADMIN_EMAIL`.
+
 ### 5. Configure Firebase Storage CORS (required for browser uploads/downloads)
 
 Run once from [Google Cloud Shell](https://shell.cloud.google.com):
@@ -346,7 +378,7 @@ RECAPTCHA_SECRET_KEY=               # SERVER-ONLY — never in VITE_*
 
 # ── Resend email ─────────────────────────────────────────────────────
 RESEND_API_KEY=                     # SERVER-ONLY
-CONTACT_TO_EMAIL=admin.backbonz@gmail.com
+CONTACT_TO_EMAIL=support.backbonz@gmail.com
 ```
 
 **Security model:**

@@ -2,6 +2,8 @@ import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 import { Sparkles } from 'lucide-react'
 import { Container } from '../ui/Container'
 import { useCountdown } from '../../hooks/useCountdown'
+import { useSettings } from '../../lib/settings'
+import { formatLaunchDate } from '../../lib/format'
 import { fadeUp } from '../../lib/motion'
 
 function Unit({ value, label, reduce }) {
@@ -33,7 +35,8 @@ function Unit({ value, label, reduce }) {
 }
 
 export default function CountdownSection() {
-  const { days, hours, minutes, seconds, isLive } = useCountdown()
+  const { launchDate } = useSettings()
+  const { days, hours, minutes, seconds, isLive } = useCountdown(launchDate)
   const reduce = useReducedMotion()
 
   return (
@@ -70,7 +73,7 @@ export default function CountdownSection() {
           </div>
 
           <h2 id="countdown-heading" className="font-display text-title-2 sm:text-4xl text-white leading-tight">
-            {isLive ? 'BackBonz is live! 🎉' : 'BackBonz launches June 10, 2026'}
+            {isLive ? 'BackBonz is live! 🎉' : `BackBonz launches ${formatLaunchDate(launchDate)}`}
           </h2>
 
           {!isLive && (

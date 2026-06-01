@@ -26,7 +26,7 @@ function sanitize(val, max = 500) {
 
 // ── reCAPTCHA v3 verification ────────────────────────────────────────
 async function verifyRecaptcha(token) {
-  const secret = process.env.RECAPTCHA_SECRET_KEY
+  const secret = import.meta.env.VITE_RECAPTCHA_SECRET_KEY
   if (!secret) return true // skip verification in dev when key is not set
   if (!token) return false
 
@@ -117,7 +117,7 @@ export default async function handler(req, res) {
     return res.status(200).json({ message: 'Message received (dev mode — email not sent).' })
   }
 
-  const toEmail = process.env.CONTACT_TO_EMAIL || 'admin.backbonz@gmail.com'
+  const toEmail = process.env.CONTACT_TO_EMAIL || 'support.backbonz@gmail.com'
   const resend = new Resend(apiKey)
 
   try {

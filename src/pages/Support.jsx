@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronDown, Mail, Clock, Sparkles } from 'lucide-react'
 import PageShell from '../components/layout/PageShell'
@@ -7,89 +7,15 @@ import { Container } from '../components/ui/Container'
 import { SectionHeading } from '../components/ui/SectionHeading'
 import { Badge } from '../components/ui/Badge'
 import { ContactForm } from '../components/forms/ContactForm'
-import { SITE } from '../config/site'
-
-// ── FAQ data ──────────────────────────────────────────────────────────
-
-const faqs = [
-  {
-    q: 'How do I use the brace timer?',
-    a: (
-      <>
-        <p>Using the brace timer is simple! Here's how:</p>
-        <ol className="list-decimal list-inside mt-2 space-y-1 text-foreground-secondary">
-          <li>Open BackBonz and tap the big <strong>Start Timer</strong> button on your dashboard.</li>
-          <li>Put on your brace. The timer runs in the background — you don't need to keep the app open.</li>
-          <li>When you take your brace off, open the app and tap <strong>Stop Timer</strong>.</li>
-          <li>Your session is automatically saved and added to your daily progress.</li>
-        </ol>
-        <p className="mt-3">Forgot to start the timer? No problem — you can also add sessions manually from the <strong>Sessions</strong> tab by entering the start and end times.</p>
-      </>
-    ),
-  },
-  {
-    q: 'How does parental consent work?',
-    a: (
-      <>
-        <p>BackBonz is designed for teens with scoliosis, and we take children's privacy seriously. Here's how parental consent works:</p>
-        <ul className="list-disc list-inside mt-2 space-y-1 text-foreground-secondary">
-          <li>When a user under 13 signs up, they enter their parent or guardian's email address.</li>
-          <li>A consent email is automatically sent to that address with a verification link.</li>
-          <li>The account is only activated after the parent or guardian clicks <strong>Confirm Consent</strong>.</li>
-          <li>Parents can review, update, or revoke consent at any time by emailing us.</li>
-        </ul>
-        <p className="mt-3">This process complies with the Children's Online Privacy Protection Act (COPPA). For more details, see our <a href="/privacy" className="text-denim underline underline-offset-2">Privacy Policy</a>.</p>
-      </>
-    ),
-  },
-  {
-    q: 'How do I request account deletion?',
-    a: (
-      <>
-        <p>You can delete your account at any time. Here's how:</p>
-        <ul className="list-disc list-inside mt-2 space-y-1 text-foreground-secondary">
-          <li><strong>In the app:</strong> Go to Settings → Account → Delete Account and follow the prompts.</li>
-          <li><strong>By email:</strong> Send "Delete My Account" to <a href={`mailto:${SITE.contactEmail}`} className="text-denim underline underline-offset-2">{SITE.contactEmail}</a> from the email associated with your account.</li>
-        </ul>
-        <p className="mt-3">For accounts belonging to children under 13, the parent or guardian must submit the deletion request. All personal data is deleted within <strong>30 days</strong>. This action is permanent and cannot be undone.</p>
-      </>
-    ),
-  },
-  {
-    q: 'How do I request a copy of my data?',
-    a: (
-      <>
-        <p>You have the right to a copy of all data we hold about you ("data portability").</p>
-        <p className="mt-2">To request your data export:</p>
-        <ol className="list-decimal list-inside mt-1 space-y-1 text-foreground-secondary">
-          <li>Email <a href={`mailto:${SITE.contactEmail}`} className="text-denim underline underline-offset-2">{SITE.contactEmail}</a></li>
-          <li>Use the subject line: <strong>"Data Export Request"</strong></li>
-          <li>Include the email address associated with your account</li>
-        </ol>
-        <p className="mt-3">We will send a downloadable copy of your data in a common format within <strong>30 days</strong>. The export includes: account information, brace session logs, journal entries, and activity history.</p>
-      </>
-    ),
-  },
-  {
-    q: 'What are your privacy and data practices?',
-    a: (
-      <>
-        <p>We built BackBonz with privacy as a priority, especially because our users are mostly teens and young people.</p>
-        <ul className="list-disc list-inside mt-2 space-y-1 text-foreground-secondary">
-          <li>We <strong>never sell</strong> your data to advertisers or third parties.</li>
-          <li>The contact form <strong>does not store</strong> your message — it's delivered directly to our email and then discarded.</li>
-          <li>Brace session and journal data is stored securely and only accessible to you (and a parent/guardian for accounts under 13).</li>
-          <li>We use Firebase (Google) for secure data storage, subject to their privacy policies.</li>
-        </ul>
-        <p className="mt-3">For full details, read our <a href="/privacy" className="text-denim underline underline-offset-2">Privacy Policy</a> and <a href="/user-agreement" className="text-denim underline underline-offset-2">User Agreement</a>.</p>
-      </>
-    ),
-  },
-]
+import { MarkdownRenderer } from '../lib/markdown/MarkdownRenderer'
+import { useSettings } from '../lib/settings'
+import { formatLaunchMonthYear } from '../lib/format'
+import { listFaqs } from '../lib/firestore/faqsRepo'
+import { DEFAULT_FAQS } from '../lib/settings/defaults'
 
 // ── FAQ Item ──────────────────────────────────────────────────────────
 
-function FaqItem({ q, a, index }) {
+function FaqItem({ question, answer, index }) {
   const [open, setOpen] = useState(false)
   const id = `faq-answer-${index}`
   const btnId = `faq-btn-${index}`
@@ -104,7 +30,7 @@ function FaqItem({ q, a, index }) {
         className="w-full text-left py-5 flex items-center justify-between gap-4 group"
       >
         <span className="font-medium text-foreground group-hover:text-rebel-pink transition-colors">
-          {q}
+          {question}
         </span>
         <motion.div
           animate={{ rotate: open ? 180 : 0 }}
@@ -128,8 +54,8 @@ function FaqItem({ q, a, index }) {
             transition={{ duration: 0.22, ease: 'easeOut' }}
             className="overflow-hidden"
           >
-            <div className="pb-5 text-body text-foreground-secondary leading-relaxed space-y-2">
-              {a}
+            <div className="pb-5 text-body text-foreground-secondary leading-relaxed">
+              <MarkdownRenderer source={answer} />
             </div>
           </motion.div>
         )}
@@ -141,6 +67,21 @@ function FaqItem({ q, a, index }) {
 // ── Page ──────────────────────────────────────────────────────────────
 
 export default function Support() {
+  const { supportEmail: email, launchDate } = useSettings()
+  const [faqs, setFaqs] = useState(null)
+
+  useEffect(() => {
+    listFaqs()
+      .then((items) => setFaqs(items.length ? items : DEFAULT_FAQS))
+      .catch(() => setFaqs(DEFAULT_FAQS))
+  }, [])
+
+  // Substitute the live support email into FAQ answers.
+  const renderedFaqs = (faqs ?? DEFAULT_FAQS).map((f) => ({
+    ...f,
+    answer: f.answer.replaceAll('{{email}}', email),
+  }))
+
   return (
     <PageShell>
       <Seo
@@ -183,10 +124,10 @@ export default function Support() {
               <div>
                 <p className="text-xs text-foreground-muted uppercase tracking-wide">Email us</p>
                 <a
-                  href={`mailto:${SITE.contactEmail}`}
+                  href={`mailto:${email}`}
                   className="text-sm font-medium text-denim hover:text-denim-400 transition-colors"
                 >
-                  {SITE.contactEmail}
+                  {email}
                 </a>
               </div>
             </div>
@@ -209,7 +150,9 @@ export default function Support() {
               </div>
               <div>
                 <p className="text-xs text-foreground-muted uppercase tracking-wide">App status</p>
-                <p className="text-sm font-medium text-foreground">Coming June 2026</p>
+                <p className="text-sm font-medium text-foreground">
+                  Coming {formatLaunchMonthYear(launchDate)}
+                </p>
               </div>
             </div>
           </div>
@@ -229,8 +172,8 @@ export default function Support() {
           />
 
           <div className="max-w-2xl mx-auto bg-white rounded-3xl shadow-sm border border-divider px-6 sm:px-8 divide-y-0">
-            {faqs.map((item, i) => (
-              <FaqItem key={i} q={item.q} a={item.a} index={i} />
+            {renderedFaqs.map((item, i) => (
+              <FaqItem key={item.id ?? i} question={item.question} answer={item.answer} index={i} />
             ))}
           </div>
         </Container>

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 import { SITE } from '../../config/site'
@@ -28,12 +28,23 @@ function FishGlyph() {
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const location = useLocation()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24)
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
+
+  // Hash links (e.g. "/#contact"): smooth-scroll if already on the target page.
+  function handleHashNav(e, to) {
+    setIsOpen(false)
+    const [path, id] = to.split('#')
+    if (id && location.pathname === (path || '/')) {
+      e.preventDefault()
+      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
 
   return (
     <header
@@ -60,20 +71,32 @@ export default function Navbar() {
 
         {/* Desktop links */}
         <ul className="hidden md:flex items-center gap-7" role="list">
-          {SITE.nav.map((item) => (
-            <li key={item.to}>
-              <NavLink
-                to={item.to}
-                className={({ isActive }) =>
-                  `text-sm font-medium transition-colors hover:text-rebel-pink ${
-                    isActive ? 'text-rebel-pink' : 'text-foreground-secondary'
-                  }`
-                }
-              >
-                {item.label}
-              </NavLink>
-            </li>
-          ))}
+          {SITE.nav.map((item) =>
+            item.to.includes('#') ? (
+              <li key={item.to}>
+                <Link
+                  to={item.to}
+                  onClick={(e) => handleHashNav(e, item.to)}
+                  className="text-sm font-medium text-foreground-secondary transition-colors hover:text-rebel-pink"
+                >
+                  {item.label}
+                </Link>
+              </li>
+            ) : (
+              <li key={item.to}>
+                <NavLink
+                  to={item.to}
+                  className={({ isActive }) =>
+                    `text-sm font-medium transition-colors hover:text-rebel-pink ${
+                      isActive ? 'text-rebel-pink' : 'text-foreground-secondary'
+                    }`
+                  }
+                >
+                  {item.label}
+                </NavLink>
+              </li>
+            )
+          )}
         </ul>
 
         {/* Mobile hamburger */}
@@ -100,23 +123,35 @@ export default function Navbar() {
             className="md:hidden bg-white/96 backdrop-blur-md border-t border-divider px-4 pb-4 pt-2"
           >
             <ul role="list" className="flex flex-col gap-1">
-              {SITE.nav.map((item) => (
-                <li key={item.to}>
-                  <NavLink
-                    to={item.to}
-                    onClick={() => setIsOpen(false)}
-                    className={({ isActive }) =>
-                      `block px-4 py-3 rounded-2xl text-sm font-medium transition-colors ${
-                        isActive
-                          ? 'bg-rebel-pink-100 text-rebel-pink'
-                          : 'text-foreground-secondary hover:bg-rebel-pink-100/50'
-                      }`
-                    }
-                  >
-                    {item.label}
-                  </NavLink>
-                </li>
-              ))}
+              {SITE.nav.map((item) =>
+                item.to.includes('#') ? (
+                  <li key={item.to}>
+                    <Link
+                      to={item.to}
+                      onClick={(e) => handleHashNav(e, item.to)}
+                      className="block px-4 py-3 rounded-2xl text-sm font-medium text-foreground-secondary hover:bg-rebel-pink-100/50 transition-colors"
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                ) : (
+                  <li key={item.to}>
+                    <NavLink
+                      to={item.to}
+                      onClick={() => setIsOpen(false)}
+                      className={({ isActive }) =>
+                        `block px-4 py-3 rounded-2xl text-sm font-medium transition-colors ${
+                          isActive
+                            ? 'bg-rebel-pink-100 text-rebel-pink'
+                            : 'text-foreground-secondary hover:bg-rebel-pink-100/50'
+                        }`
+                      }
+                    >
+                      {item.label}
+                    </NavLink>
+                  </li>
+                )
+              )}
             </ul>
           </motion.div>
         )}
