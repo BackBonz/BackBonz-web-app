@@ -5,7 +5,6 @@ import { Badge } from '../ui/Badge'
 import { Container } from '../ui/Container'
 import { useCountdown } from '../../hooks/useCountdown'
 import { useSettings } from '../../lib/settings'
-import { formatLaunchMonthYear } from '../../lib/format'
 import { Fish } from '../ui/illustrations/Fish'
 import { fadeUp, fadeIn } from '../../lib/motion'
 
@@ -116,7 +115,7 @@ export default function Hero() {
         >
           <Badge variant="pink">
             <Sparkles size={12} aria-hidden="true" />
-            Coming Soon — {formatLaunchMonthYear(launchDate)}
+            Coming Soon
           </Badge>
         </motion.div>
 

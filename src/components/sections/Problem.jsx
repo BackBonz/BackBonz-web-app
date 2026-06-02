@@ -44,7 +44,7 @@ export default function Problem() {
         <SectionHeading
           id="problem-heading"
           eyebrow="The Problem"
-          title="Brace compliance is broken"
+          title="Braces are uncomfortable and consistency is a challenge"
           subtitle="Teens with scoliosis face real barriers that current solutions ignore."
           centered
           className="mb-14"
