@@ -1,5 +1,66 @@
 @import "tailwindcss";
 
+/* ── Brand fonts ────────────────────────────────────────────────────
+   Bianco Sans (body), Plakat (H1/display), HeadSurgery (H2/decorative).
+   Bianco Sans has no Medium(500)/SemiBold(600) weights, so 500 maps to
+   Regular and 600 maps to Bold via the weight ranges below. */
+@font-face {
+  font-family: "Bianco Sans";
+  src: url("/fonts/Bianco_Sans/BiancoSans-Regular.woff2") format("woff2");
+  font-weight: 400 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Bianco Sans";
+  src: url("/fonts/Bianco_Sans/BiancoSans-Italic.woff2") format("woff2");
+  font-weight: 400 500;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Bianco Sans";
+  src: url("/fonts/Bianco_Sans/BiancoSans-Bold.woff2") format("woff2");
+  font-weight: 600 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Bianco Sans";
+  src: url("/fonts/Bianco_Sans/BiancoSans-BoldItalic.woff2") format("woff2");
+  font-weight: 600 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Bianco Sans";
+  src: url("/fonts/Bianco_Sans/BiancoSans-ExtraBold.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Bianco Sans";
+  src: url("/fonts/Bianco_Sans/BiancoSans-Heavy.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Plakat";
+  src: url("/fonts/Plakat/Plakat.ttf.woff") format("woff");
+  font-weight: 400 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "HeadSurgery";
+  src: url("/fonts/HeadSurgery/HeadSurgery.ttf.woff") format("woff");
+  font-weight: 400 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* ── BackBonz Design System (Tailwind v4 theme) ────────────────────── */
 @theme {
   /* Brand core */
@@ -48,14 +109,21 @@
   --font-display: "Plakat", "Bianco Sans", ui-rounded, system-ui, sans-serif;
   --font-fun: "HeadSurgery", "Plakat", ui-rounded, system-ui, sans-serif;
 
-  /* Type scale */
+  /* Type scale — titles track tight (-3.2%), body slightly tight (-1.4%) per spec */
   --text-title-1: 2rem;
+  --text-title-1--letter-spacing: -0.032em;
   --text-title-2: 1.75rem;
+  --text-title-2--letter-spacing: -0.032em;
   --text-title-3: 1.5rem;
+  --text-title-3--letter-spacing: -0.032em;
   --text-title-4: 1.25rem;
+  --text-title-4--letter-spacing: -0.032em;
   --text-title-5: 1.125rem;
+  --text-title-5--letter-spacing: -0.032em;
   --text-body-lg: 1.125rem;
+  --text-body-lg--letter-spacing: -0.014em;
   --text-body: 1rem;
+  --text-body--letter-spacing: -0.014em;
 }
 
 /* ── Animated hero gradient ─────────────────────────────────────────── */

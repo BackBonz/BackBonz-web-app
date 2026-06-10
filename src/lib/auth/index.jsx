@@ -9,7 +9,15 @@ import {
 } from 'firebase/auth'
 import { auth } from '../../config/firebase'
 
-const ADMIN_EMAIL = import.meta.env.VITE_ADMIN_EMAIL
+// Only this account may access the admin panel — via email/password OR Google.
+// Pinned to admin.backbonz@gmail.com; VITE_ADMIN_EMAIL can override for other envs.
+const ADMIN_EMAIL = (import.meta.env.VITE_ADMIN_EMAIL || 'admin.backbonz@gmail.com')
+  .trim()
+  .toLowerCase()
+
+// Email comparison is case-insensitive (email addresses are not case-sensitive).
+const isAdminEmail = (email) =>
+  typeof email === 'string' && email.trim().toLowerCase() === ADMIN_EMAIL
 
 const googleProvider = new GoogleAuthProvider()
 
@@ -21,7 +29,7 @@ export function AuthProvider({ children }) {
 
   useEffect(() => {
     const unsub = onAuthStateChanged(auth, (firebaseUser) => {
-      if (firebaseUser && firebaseUser.email === ADMIN_EMAIL) {
+      if (firebaseUser && isAdminEmail(firebaseUser.email)) {
         setUser(firebaseUser)
       } else {
         setUser(null)
@@ -33,13 +41,13 @@ export function AuthProvider({ children }) {
   }, [])
 
   async function signIn(email, password) {
-    if (email !== ADMIN_EMAIL) throw new Error('Unauthorized email address.')
+    if (!isAdminEmail(email)) throw new Error('Unauthorized email address.')
     return signInWithEmailAndPassword(auth, email, password)
   }
 
   async function signInWithGoogle() {
     const result = await signInWithPopup(auth, googleProvider)
-    if (result.user.email !== ADMIN_EMAIL) {
+    if (!isAdminEmail(result.user.email)) {
       await firebaseSignOut(auth)
       throw new Error('Unauthorized account. Use the admin Google account.')
     }

@@ -72,7 +72,7 @@ export default function CountdownSection() {
             <Sparkles size={18} className="text-yoke" aria-hidden="true" />
           </div>
 
-          <h2 id="countdown-heading" className="font-display text-title-2 sm:text-4xl text-white leading-tight">
+          <h2 id="countdown-heading" className="font-fun text-title-2 sm:text-4xl text-white leading-tight">
             {isLive ? 'BackBonz is live! 🎉' : `BackBonz launches ${formatLaunchDate(launchDate)}`}
           </h2>
 

@@ -10,21 +10,9 @@
   "lang": "en",
   "icons": [
     {
-      "src": "favicon.svg",
-      "type": "image/svg+xml",
-      "sizes": "any",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "apple-touch-icon.png",
+      "src": "images/fish_tank_1.png",
       "type": "image/png",
-      "sizes": "180x180",
-      "purpose": "any"
-    },
-    {
-      "src": "favicon-32x32.png",
-      "type": "image/png",
-      "sizes": "32x32",
+      "sizes": "306x274",
       "purpose": "any"
     }
   ]

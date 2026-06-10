@@ -5,8 +5,11 @@ import { HelmetProvider } from 'react-helmet-async'
 import { AuthProvider } from './lib/auth'
 import { SettingsProvider } from './lib/settings'
 import { ToastProvider } from './components/admin/Toast'
+import { startFaviconRotation } from './lib/favicon'
 import './index.css'
 import App from './App.jsx'
+
+startFaviconRotation()
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
