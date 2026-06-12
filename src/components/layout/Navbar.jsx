@@ -3,27 +3,7 @@ import { Link, NavLink, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 import { SITE } from '../../config/site'
-
-function FishGlyph() {
-  return (
-    <svg
-      width="28" height="18"
-      viewBox="0 0 100 60"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-    >
-      <path
-        d="M72 30 C88 12 100 4 100 4 L94 30 L100 56 C100 56 88 48 72 30 Z"
-        fill="#EA92CB"
-      />
-      <ellipse cx="40" cy="30" rx="36" ry="23" fill="#EA92CB" />
-      <ellipse cx="30" cy="25" rx="11" ry="7" fill="#F2BEDE" />
-      <circle cx="16" cy="27" r="4" fill="white" />
-      <circle cx="17" cy="27" r="2.2" fill="#010003" />
-      <circle cx="17.8" cy="26.2" r="0.8" fill="white" opacity="0.7" />
-    </svg>
-  )
-}
+import { withBase } from '../../lib/format'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -62,11 +42,10 @@ export default function Navbar() {
         {/* Logo */}
         <Link
           to="/"
-          className="flex items-center gap-2 font-display text-xl font-bold text-foreground hover:text-rebel-pink transition-colors"
+          className="flex items-center hover:opacity-80 transition-opacity"
           aria-label="BackBonz — go to home"
         >
-          <FishGlyph />
-          <span>BackBonz</span>
+          <img src={withBase('images/splash_logo.png')} alt="BackBonz" className="h-10 w-auto" />
         </Link>
 
         {/* Desktop links */}

@@ -72,11 +72,11 @@ export default function AdminLogin() {
         <meta name="robots" content="noindex,nofollow" />
       </Helmet>
 
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4">
-        <div className="w-full max-w-sm bg-white border border-gray-200 rounded-2xl shadow-sm p-8">
+      <div className="min-h-screen bg-background flex items-center justify-center px-4">
+        <div className="w-full max-w-sm bg-white border border-divider rounded-2xl shadow-sm p-8">
           <div className="mb-8 text-center">
             <p className="text-2xl font-display font-bold text-denim tracking-tight">BackBonz</p>
-            <p className="text-sm text-gray-500 mt-1">Admin access only</p>
+            <p className="text-sm text-foreground-tertiary mt-1">Admin access only</p>
           </div>
 
           {/* Google Sign-In */}
@@ -84,7 +84,7 @@ export default function AdminLogin() {
             type="button"
             onClick={handleGoogle}
             disabled={googleLoading || isSubmitting}
-            className="w-full flex items-center justify-center gap-3 py-2.5 px-4 rounded-xl border border-gray-200 bg-white hover:bg-gray-50 text-sm font-medium text-foreground transition-colors disabled:opacity-60 shadow-sm"
+            className="w-full flex items-center justify-center gap-3 py-2.5 px-4 rounded-xl border border-divider bg-white hover:bg-background text-sm font-medium text-foreground transition-colors disabled:opacity-60 shadow-sm"
           >
             <GoogleIcon />
             {googleLoading ? 'Signing in…' : 'Continue with Google'}
@@ -92,9 +92,9 @@ export default function AdminLogin() {
 
           {/* Divider */}
           <div className="flex items-center gap-3 my-6">
-            <hr className="flex-1 border-gray-200" />
-            <span className="text-xs text-gray-400">or</span>
-            <hr className="flex-1 border-gray-200" />
+            <hr className="flex-1 border-divider" />
+            <span className="text-xs text-foreground-muted">or</span>
+            <hr className="flex-1 border-divider" />
           </div>
 
           {/* Email / password form */}
@@ -108,7 +108,7 @@ export default function AdminLogin() {
                 type="email"
                 autoComplete="email"
                 {...register('email')}
-                className="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-denim/40"
+                className="w-full rounded-lg border border-divider px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-denim/40"
               />
               {errors.email && (
                 <p className="mt-1 text-xs text-cherry-red">{errors.email.message}</p>
@@ -124,7 +124,7 @@ export default function AdminLogin() {
                 type="password"
                 autoComplete="current-password"
                 {...register('password')}
-                className="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-denim/40"
+                className="w-full rounded-lg border border-divider px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-denim/40"
               />
               {errors.password && (
                 <p className="mt-1 text-xs text-cherry-red">{errors.password.message}</p>

@@ -3,6 +3,7 @@ import { HeartCrack, ClipboardList, TrendingDown } from 'lucide-react'
 import { Container } from '../ui/Container'
 import { Card } from '../ui/Card'
 import { SectionHeading } from '../ui/SectionHeading'
+import { Highlight } from '../ui/Highlight'
 import { staggerContainer, cardReveal } from '../../lib/motion'
 
 const problems = [
@@ -37,14 +38,14 @@ export default function Problem() {
 
   return (
     <section
-      className="py-20 sm:py-28 bg-rebel-pink-100/40"
+      className="py-20 sm:py-28 bg-rebel-pink-100"
       aria-labelledby="problem-heading"
     >
       <Container>
         <SectionHeading
           id="problem-heading"
           eyebrow="The Problem"
-          title="Braces are uncomfortable and consistency is a challenge"
+          title={<>Braces are uncomfortable and <Highlight color="red">consistency is a challenge</Highlight></>}
           subtitle="Teens with scoliosis face real barriers that current solutions ignore."
           centered
           className="mb-14"

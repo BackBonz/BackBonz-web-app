@@ -8,11 +8,11 @@ export function DocumentCard({ doc, onSetActive, onDelete, onPreview, settingAct
   return (
     <div
       className={`flex items-start gap-3 rounded-xl border p-4 bg-white transition-colors ${
-        doc.isActive ? 'border-denim/40 ring-1 ring-denim/20' : 'border-gray-200'
+        doc.isActive ? 'border-denim/40 ring-1 ring-denim/20' : 'border-divider'
       }`}
     >
       {/* Icon */}
-      <div className={`mt-0.5 shrink-0 ${doc.isActive ? 'text-denim' : 'text-gray-300'}`}>
+      <div className={`mt-0.5 shrink-0 ${doc.isActive ? 'text-denim' : 'text-foreground-muted'}`}>
         <FileText size={20} />
       </div>
 
@@ -21,7 +21,7 @@ export function DocumentCard({ doc, onSetActive, onDelete, onPreview, settingAct
         <p className="text-sm font-medium text-foreground truncate" title={doc.name}>
           {doc.name}
         </p>
-        <p className="text-xs text-gray-400 mt-0.5">
+        <p className="text-xs text-foreground-muted mt-0.5">
           {TYPE_LABELS[doc.type] ?? doc.type}
           {doc.updatedAt ? ` · ${doc.updatedAt}` : ''}
           {doc.size ? ` · ${(doc.size / 1024).toFixed(0)} KB` : ''}
@@ -40,7 +40,7 @@ export function DocumentCard({ doc, onSetActive, onDelete, onPreview, settingAct
           label={previewing ? 'Loading preview…' : 'Preview'}
           onClick={() => onPreview(doc)}
           disabled={busy}
-          className="text-gray-400 hover:text-denim"
+          className="text-foreground-muted hover:text-denim"
         >
           {previewing
             ? <Loader2 size={16} className="animate-spin" />
@@ -62,7 +62,7 @@ export function DocumentCard({ doc, onSetActive, onDelete, onPreview, settingAct
           label="Delete"
           onClick={() => onDelete(doc)}
           disabled={busy}
-          className="text-gray-400 hover:text-cherry-red"
+          className="text-foreground-muted hover:text-cherry-red"
         >
           <Trash2 size={16} />
         </IconBtn>
@@ -77,7 +77,7 @@ function IconBtn({ label, onClick, disabled, className, children }) {
       aria-label={label}
       onClick={onClick}
       disabled={disabled}
-      className={`p-1.5 rounded-lg hover:bg-gray-100 transition-colors disabled:opacity-50 ${className}`}
+      className={`p-1.5 rounded-lg hover:bg-rebel-pink-100/50 transition-colors disabled:opacity-50 ${className}`}
     >
       {children}
     </button>

@@ -123,7 +123,7 @@ export default function AdminFaq() {
             <button
               onClick={() => setConfirmSeed(true)}
               disabled={seeding}
-              className="flex items-center gap-1.5 text-sm text-gray-500 hover:text-foreground transition-colors disabled:opacity-50"
+              className="flex items-center gap-1.5 text-sm text-foreground-tertiary hover:text-foreground transition-colors disabled:opacity-50"
             >
               <RotateCcw size={14} />
               Restore defaults
@@ -141,7 +141,7 @@ export default function AdminFaq() {
 
         <p className="text-sm text-foreground-muted mb-6">
           Answers support Markdown (lists, <strong>bold</strong>, [links](url)). Use{' '}
-          <code className="bg-gray-100 px-1 rounded">{'{{email}}'}</code> to insert the live support email.
+          <code className="bg-background px-1 rounded">{'{{email}}'}</code> to insert the live support email.
         </p>
 
         {/* New-FAQ editor */}
@@ -179,11 +179,11 @@ export default function AdminFaq() {
               ) : (
                 <div
                   key={faq.id}
-                  className="bg-white border border-gray-200 rounded-2xl p-4 flex items-start justify-between gap-4"
+                  className="bg-white border border-divider rounded-2xl p-4 flex items-start justify-between gap-4"
                 >
                   <div className="min-w-0">
                     <p className="font-semibold text-foreground">{faq.question}</p>
-                    <p className="text-sm text-gray-500 mt-1 line-clamp-2 whitespace-pre-wrap">
+                    <p className="text-sm text-foreground-tertiary mt-1 line-clamp-2 whitespace-pre-wrap">
                       {faq.answer}
                     </p>
                   </div>
@@ -191,7 +191,7 @@ export default function AdminFaq() {
                     <button
                       onClick={() => startEdit(faq)}
                       disabled={editorOpen}
-                      className="p-2 rounded-lg text-gray-400 hover:text-denim hover:bg-gray-100 transition-colors disabled:opacity-40"
+                      className="p-2 rounded-lg text-foreground-muted hover:text-denim hover:bg-rebel-pink-100/50 transition-colors disabled:opacity-40"
                       aria-label="Edit FAQ"
                     >
                       <Pencil size={15} />
@@ -199,7 +199,7 @@ export default function AdminFaq() {
                     <button
                       onClick={() => setDeleteTarget(faq)}
                       disabled={editorOpen}
-                      className="p-2 rounded-lg text-gray-400 hover:text-cherry-red hover:bg-gray-100 transition-colors disabled:opacity-40"
+                      className="p-2 rounded-lg text-foreground-muted hover:text-cherry-red hover:bg-rebel-pink-100/50 transition-colors disabled:opacity-40"
                       aria-label="Delete FAQ"
                     >
                       <Trash2 size={15} />
@@ -266,7 +266,7 @@ function FaqEditor({ draft, setDraft, saving, onSave, onCancel, title }) {
         <button
           onClick={onCancel}
           disabled={saving}
-          className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium text-gray-500 hover:bg-gray-100 transition-colors disabled:opacity-50"
+          className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium text-foreground-tertiary hover:bg-rebel-pink-100/50 transition-colors disabled:opacity-50"
         >
           <X size={15} />
           Cancel

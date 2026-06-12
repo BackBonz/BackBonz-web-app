@@ -38,7 +38,7 @@ export function useToast() {
 // ── UI ───────────────────────────────────────────────────────────────────────
 
 const ICONS = {
-  success: <CheckCircle size={18} className="text-green-600 shrink-0" />,
+  success: <CheckCircle size={18} className="text-denim shrink-0" />,
   error:   <XCircle    size={18} className="text-cherry-red shrink-0" />,
   info:    <Info       size={18} className="text-denim shrink-0" />,
 }
@@ -58,14 +58,14 @@ function ToastStack({ toasts, onRemove }) {
             animate={{ opacity: 1, y: 0,  scale: 1    }}
             exit={{    opacity: 0, y: 10, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="pointer-events-auto flex items-start gap-3 bg-white border border-gray-200 shadow-lg rounded-xl px-4 py-3 min-w-[260px] max-w-sm"
+            className="pointer-events-auto flex items-start gap-3 bg-white border border-divider shadow-lg rounded-xl px-4 py-3 min-w-[260px] max-w-sm"
           >
             {ICONS[t.type]}
             <p className="text-sm text-foreground flex-1">{t.message}</p>
             <button
               onClick={() => onRemove(t.id)}
               aria-label="Dismiss"
-              className="text-gray-400 hover:text-foreground transition-colors mt-0.5"
+              className="text-foreground-muted hover:text-foreground transition-colors mt-0.5"
             >
               <X size={15} />
             </button>

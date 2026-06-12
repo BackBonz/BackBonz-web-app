@@ -40,7 +40,7 @@ export function ConfirmModal({ open, title, message, confirmLabel = 'Delete', on
                   {title}
                 </h2>
                 {message && (
-                  <p className="text-sm text-gray-500 mt-1">{message}</p>
+                  <p className="text-sm text-foreground-tertiary mt-1">{message}</p>
                 )}
               </div>
             </div>
@@ -49,7 +49,7 @@ export function ConfirmModal({ open, title, message, confirmLabel = 'Delete', on
               <button
                 onClick={onCancel}
                 disabled={busy}
-                className="px-4 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 transition-colors disabled:opacity-50"
+                className="px-4 py-2 rounded-lg text-sm font-medium text-foreground-secondary hover:bg-rebel-pink-100/50 transition-colors disabled:opacity-50"
               >
                 Cancel
               </button>

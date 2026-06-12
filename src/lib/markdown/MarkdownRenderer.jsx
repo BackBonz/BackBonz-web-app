@@ -21,7 +21,7 @@ function childrenToString(children) {
 function makeHeading(level) {
   const Tag = `h${level}`
   const sizeClasses = {
-    1: 'font-display text-title-2 sm:text-title-1 text-foreground mt-10 mb-4 leading-tight',
+    1: 'font-fun text-title-2 sm:text-title-1 text-foreground mt-10 mb-4 leading-tight',
     2: 'font-display text-title-3 text-foreground mt-8 mb-3 leading-tight',
     3: 'font-display text-title-4 text-foreground mt-6 mb-2 leading-snug',
     4: 'font-display text-title-5 text-foreground mt-4 mb-2 leading-snug',

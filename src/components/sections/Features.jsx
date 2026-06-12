@@ -11,6 +11,7 @@ import {
 } from 'lucide-react'
 import { Container } from '../ui/Container'
 import { SectionHeading } from '../ui/SectionHeading'
+import { Highlight } from '../ui/Highlight'
 import { staggerContainer, cardReveal } from '../../lib/motion'
 
 const features = [
@@ -84,7 +85,7 @@ export default function Features() {
         <SectionHeading
           id="features-heading"
           eyebrow="Features"
-          title="Everything a teen needs to succeed"
+          title={<>Everything a teen needs to <Highlight color="yoke">succeed</Highlight></>}
           subtitle="BackBonz was built with teens, parents, and clinicians in mind — every feature earns its place."
           centered
           className="mb-14"

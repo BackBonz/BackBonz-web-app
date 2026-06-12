@@ -64,7 +64,7 @@ export default function AdminSettings() {
         ) : (
           <form onSubmit={handleSave} className="flex flex-col gap-8 max-w-xl">
             {/* General */}
-            <section className="bg-white border border-gray-200 rounded-2xl p-5 flex flex-col gap-4">
+            <section className="bg-white border border-divider rounded-2xl p-5 flex flex-col gap-4">
               <h2 className="font-semibold text-foreground">General</h2>
 
               <Field label="Launch date" hint="Drives the homepage countdown and date labels.">
@@ -88,7 +88,7 @@ export default function AdminSettings() {
             </section>
 
             {/* Hero buttons */}
-            <section className="bg-white border border-gray-200 rounded-2xl p-5 flex flex-col gap-4">
+            <section className="bg-white border border-divider rounded-2xl p-5 flex flex-col gap-4">
               <h2 className="font-semibold text-foreground">Hero buttons</h2>
 
               <Toggle
@@ -170,7 +170,7 @@ function Toggle({ label, checked, onChange }) {
         aria-checked={checked}
         onClick={() => onChange(!checked)}
         className={`relative w-11 h-6 rounded-full transition-colors ${
-          checked ? 'bg-denim' : 'bg-gray-300'
+          checked ? 'bg-denim' : 'bg-divider'
         }`}
       >
         <span

@@ -3,6 +3,7 @@ import { Apple, Smartphone, Sparkles } from 'lucide-react'
 import { Button } from '../ui/Button'
 import { Badge } from '../ui/Badge'
 import { Container } from '../ui/Container'
+import { Highlight } from '../ui/Highlight'
 import { useCountdown } from '../../hooks/useCountdown'
 import { useSettings } from '../../lib/settings'
 import { Fish } from '../ui/illustrations/Fish'
@@ -98,13 +99,13 @@ export default function Hero() {
 
   return (
     <section
-      className="hero-gradient relative min-h-screen flex items-center pt-16 overflow-hidden"
+      className="bg-yoke-100 relative min-h-screen flex items-center pt-16 overflow-hidden"
       aria-labelledby="hero-heading"
     >
       {/* Floating fish */}
-      <Fish variant="pink"  size={90} delay={0}   float className="absolute top-10 right-6 sm:right-16 md:right-24 opacity-80 pointer-events-none" />
-      <Fish variant="blue"  size={65} delay={1.2} float flipX className="absolute bottom-28 left-4 sm:left-12 opacity-70 pointer-events-none" />
-      <Fish variant="yellow" size={52} delay={0.7} float className="absolute top-36 left-8 sm:left-24 md:left-40 opacity-70 pointer-events-none" />
+      <Fish variant="white"  size={96} delay={0}   float className="absolute top-10 right-6 sm:right-16 md:right-24 opacity-90 pointer-events-none" />
+      <Fish variant="blue"   size={72} delay={1.2} float flipX className="absolute bottom-28 left-4 sm:left-12 opacity-80 pointer-events-none" />
+      <Fish variant="orange" size={58} delay={0.7} float className="absolute top-36 left-8 sm:left-24 md:left-40 opacity-80 pointer-events-none" />
 
       <Container className="relative z-10 py-20 sm:py-28 flex flex-col items-center text-center gap-8">
         {/* Coming soon badge */}
@@ -125,10 +126,10 @@ export default function Hero() {
           variants={fadeUp(reduce)}
           initial="hidden"
           animate="visible"
-          className="font-display text-title-1 sm:text-4xl md:text-5xl text-foreground leading-tight max-w-3xl"
+          className="font-fun text-title-1 sm:text-4xl md:text-5xl text-foreground leading-tight max-w-3xl"
         >
           Helping teens with scoliosis build{' '}
-          <span className="text-rebel-pink">confidence</span> and healthy
+          <Highlight color="pink">confidence</Highlight> and healthy
           brace-wear habits.
         </motion.h1>
 

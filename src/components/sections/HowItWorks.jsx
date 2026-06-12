@@ -5,6 +5,7 @@ import { Fish } from '../ui/illustrations/Fish'
 import { LottiePlayer } from '../ui/LottiePlayer'
 import { staggerContainer, cardReveal } from '../../lib/motion'
 import { withBase } from '../../lib/format'
+import { Highlight } from '../ui/Highlight'
 
 function PhoneFrame({ src, alt }) {
   return (
@@ -91,7 +92,7 @@ export default function HowItWorks() {
   return (
     <section
       id="how-it-works"
-      className="relative py-20 sm:py-28 bg-yoke-100/30 overflow-hidden"
+      className="relative py-20 sm:py-28 bg-yoke-100 overflow-hidden"
       aria-labelledby="hiw-heading"
     >
       {/* Decorative background fish */}
@@ -126,7 +127,7 @@ export default function HowItWorks() {
         <SectionHeading
           id="hiw-heading"
           eyebrow="How It Works"
-          title="From first tap to first streak"
+          title={<>From first tap to <Highlight color="denim">first streak</Highlight></>}
           subtitle="BackBonz makes brace-wear feel less like a chore and more like a daily adventure."
           centered
           className="mb-16"

@@ -6,6 +6,7 @@ import { Seo } from '../lib/seo/Seo'
 import { Container } from '../components/ui/Container'
 import { SectionHeading } from '../components/ui/SectionHeading'
 import { Badge } from '../components/ui/Badge'
+import { Highlight } from '../components/ui/Highlight'
 import { ContactForm } from '../components/forms/ContactForm'
 import { MarkdownRenderer } from '../lib/markdown/MarkdownRenderer'
 import { useSettings } from '../lib/settings'
@@ -92,7 +93,7 @@ export default function Support() {
 
       {/* Hero */}
       <section
-        className="bg-gradient-to-br from-rebel-pink-100/60 to-yoke-100/40 pt-28 pb-14"
+        className="bg-rebel-pink-100 pt-28 pb-14"
         aria-labelledby="support-hero-heading"
       >
         <Container className="text-center flex flex-col items-center gap-4">
@@ -102,9 +103,9 @@ export default function Support() {
           </Badge>
           <h1
             id="support-hero-heading"
-            className="font-display text-title-2 sm:text-title-1 text-foreground leading-tight max-w-2xl"
+            className="font-fun text-title-2 sm:text-title-1 text-foreground leading-tight max-w-2xl"
           >
-            Support &amp; Help Center
+            Support &amp; <Highlight color="pink">Help Center</Highlight>
           </h1>
           <p className="text-body-lg text-foreground-secondary max-w-xl leading-relaxed">
             Have a question about BackBonz, your brace tracker, or your account? We've got you
@@ -165,7 +166,7 @@ export default function Support() {
           <SectionHeading
             id="faq-heading"
             eyebrow="FAQ"
-            title="Frequently asked questions"
+            title={<>Frequently asked <Highlight color="denim">questions</Highlight></>}
             subtitle="Quick answers for teens, parents, and clinicians."
             centered
             className="mb-12"
@@ -182,7 +183,7 @@ export default function Support() {
       {/* Contact form */}
       <section
         id="contact"
-        className="py-16 sm:py-20 bg-rebel-pink-100/30"
+        className="py-16 sm:py-20 bg-rebel-pink-100"
         aria-labelledby="support-contact-heading"
       >
         <Container>
@@ -190,7 +191,7 @@ export default function Support() {
             <SectionHeading
               id="support-contact-heading"
               eyebrow="Contact Us"
-              title="Still have questions?"
+              title={<>Still have <Highlight color="brown">questions?</Highlight></>}
               subtitle="Send us a message and we'll get back to you within 1–2 business days."
               centered
               className="mb-10"

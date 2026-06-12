@@ -35,7 +35,7 @@ function MessageCard({ msg, onDelete }) {
     <div
       className={`rounded-2xl border transition-colors ${
         msg.read
-          ? 'bg-white border-gray-200'
+          ? 'bg-white border-divider'
           : 'bg-rebel-pink-100/30 border-rebel-pink-200'
       }`}
     >
@@ -55,7 +55,7 @@ function MessageCard({ msg, onDelete }) {
           <div className="flex items-center gap-2 flex-wrap">
             <span className="font-semibold text-sm text-foreground">{msg.name}</span>
             {msg.role && (
-              <span className="text-xs text-foreground-muted bg-gray-100 px-2 py-0.5 rounded-full">
+              <span className="text-xs text-foreground-muted bg-background px-2 py-0.5 rounded-full">
                 {msg.role}
               </span>
             )}
@@ -73,7 +73,7 @@ function MessageCard({ msg, onDelete }) {
 
       {/* Expanded detail */}
       {expanded && (
-        <div className="border-t border-gray-100 px-4 py-4 flex flex-col gap-4">
+        <div className="border-t border-divider px-4 py-4 flex flex-col gap-4">
           {/* Meta */}
           <dl className="grid sm:grid-cols-3 gap-3 text-sm">
             <div className="flex items-start gap-2">
@@ -109,7 +109,7 @@ function MessageCard({ msg, onDelete }) {
           </dl>
 
           {/* Message body */}
-          <div className="bg-gray-50 rounded-xl p-3">
+          <div className="bg-background rounded-xl p-3">
             <p className="text-xs text-foreground-muted mb-1">Message</p>
             <p className="text-sm text-foreground leading-relaxed whitespace-pre-wrap">{msg.message}</p>
           </div>

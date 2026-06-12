@@ -51,19 +51,19 @@ export function UploadZone({ onUpload, uploading }) {
         disabled={uploading}
         aria-label="Upload document"
         className={`w-full border-2 border-dashed rounded-xl p-8 flex flex-col items-center gap-3 transition-colors cursor-pointer
-          ${dragOver ? 'border-denim bg-denim/5' : 'border-gray-200 bg-white hover:border-denim/50 hover:bg-gray-50'}
+          ${dragOver ? 'border-denim bg-denim/5' : 'border-divider bg-white hover:border-denim/50 hover:bg-background'}
           ${uploading ? 'opacity-60 pointer-events-none' : ''}
         `}
       >
         <UploadCloud
           size={36}
-          className={`transition-colors ${dragOver ? 'text-denim' : 'text-gray-300'}`}
+          className={`transition-colors ${dragOver ? 'text-denim' : 'text-foreground-muted'}`}
         />
         <div className="text-center">
           <p className="text-sm font-medium text-foreground">
             {uploading ? 'Uploading…' : 'Drop a file here, or click to browse'}
           </p>
-          <p className="text-xs text-gray-400 mt-0.5">
+          <p className="text-xs text-foreground-muted mt-0.5">
             .md, .pdf, .docx — max 10 MB
           </p>
         </div>

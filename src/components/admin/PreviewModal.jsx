@@ -40,12 +40,12 @@ export function PreviewModal({ doc, onClose }) {
             className="bg-background rounded-2xl shadow-2xl w-full max-w-3xl max-h-[88vh] flex flex-col overflow-hidden"
           >
             {/* Header */}
-            <div className="flex items-center justify-between px-5 py-3 border-b border-gray-200 shrink-0">
+            <div className="flex items-center justify-between px-5 py-3 border-b border-divider shrink-0">
               <p className="font-semibold text-foreground truncate">{doc.name}</p>
               <button
                 onClick={onClose}
                 aria-label="Close preview"
-                className="p-1.5 rounded-lg hover:bg-gray-100 transition-colors text-gray-500 hover:text-foreground"
+                className="p-1.5 rounded-lg hover:bg-rebel-pink-100/50 transition-colors text-foreground-tertiary hover:text-foreground"
               >
                 <X size={18} />
               </button>

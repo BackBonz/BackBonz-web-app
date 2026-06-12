@@ -4,6 +4,7 @@ import { Container } from '../ui/Container'
 import { useCountdown } from '../../hooks/useCountdown'
 import { useSettings } from '../../lib/settings'
 import { formatLaunchDate } from '../../lib/format'
+import { Highlight } from '../ui/Highlight'
 import { fadeUp } from '../../lib/motion'
 
 function Unit({ value, label, reduce }) {
@@ -73,7 +74,11 @@ export default function CountdownSection() {
           </div>
 
           <h2 id="countdown-heading" className="font-fun text-title-2 sm:text-4xl text-white leading-tight">
-            {isLive ? 'BackBonz is live! 🎉' : `BackBonz launches ${formatLaunchDate(launchDate)}`}
+            {isLive ? (
+              'BackBonz is live! 🎉'
+            ) : (
+              <>BackBonz launches <Highlight color="yoke">{formatLaunchDate(launchDate)}</Highlight></>
+            )}
           </h2>
 
           {!isLive && (

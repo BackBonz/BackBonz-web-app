@@ -6,7 +6,7 @@ export function Badge({ variant = 'pink', className = '', children, ...props }) 
     pink: 'bg-rebel-pink-100 text-rebel-pink border border-rebel-pink-200',
     blue: 'bg-denim-300/20 text-denim border border-denim-300/30',
     yellow: 'bg-yoke-100 text-true-brown border border-yoke-300',
-    green: 'bg-emerald-50 text-emerald-700 border border-emerald-200',
+    green: 'bg-denim/10 text-denim border border-denim-300/30',
   }
 
   return (

@@ -1,12 +1,13 @@
 import { Container } from '../ui/Container'
 import { SectionHeading } from '../ui/SectionHeading'
+import { Highlight } from '../ui/Highlight'
 import { ContactForm } from '../forms/ContactForm'
 
 export default function Contact() {
   return (
     <section
       id="contact"
-      className="py-20 sm:py-28 bg-rebel-pink-100/30"
+      className="py-20 sm:py-28 bg-rebel-pink-100"
       aria-labelledby="home-contact-heading"
     >
       <Container>
@@ -14,7 +15,7 @@ export default function Contact() {
           <SectionHeading
             id="home-contact-heading"
             eyebrow="Stay in Touch"
-            title="Get notified at launch"
+            title={<>Get notified <Highlight color="pink">at launch</Highlight></>}
             subtitle="Drop us your info and we'll reach out the moment BackBonz goes live."
             centered
             className="mb-10"

@@ -5,7 +5,7 @@ export function SectionHeading({ id, eyebrow, title, subtitle, centered = false,
   return (
     <div className={`${centered ? 'text-center' : ''} ${className}`}>
       {eyebrow && (
-        <p className="text-sm font-semibold uppercase tracking-widest text-rebel-pink mb-2">
+        <p className="font-display text-sm font-semibold uppercase tracking-widest text-rebel-pink mb-2">
           {eyebrow}
         </p>
       )}

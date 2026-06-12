@@ -1,19 +1,23 @@
 import { motion, useReducedMotion } from 'framer-motion'
+import { withBase } from '../../../lib/format'
 
-const PRESETS = {
-  pink:   { body: '#EA92CB', shine: '#F7D3E9', tail: '#D97AB5' },
-  blue:   { body: '#7299D1', shine: '#C2D3ED', tail: '#4377C2' },
-  yellow: { body: '#F9E88A', shine: '#FDF6D0', tail: '#E8D050' },
-  orange: { body: '#EF5C3F', shine: '#F9BEB2', tail: '#C9391E' },
+// Swimming-fish images (public/images). Variant names kept for backwards-compat.
+const SRC = {
+  white:  'images/white.png',
+  blue:   'images/blue.png',
+  orange: 'images/orange.png',
+  // legacy aliases → nearest available image
+  pink:   'images/white.png',
+  yellow: 'images/orange.png',
 }
 
 /**
- * Animated inline-SVG fish illustration.
+ * Floating fish image.
  *
- * @param {{ variant?: 'pink'|'blue'|'yellow'|'orange', size?: number, flipX?: boolean, float?: boolean, delay?: number, className?: string }} props
+ * @param {{ variant?: 'white'|'blue'|'orange', size?: number, flipX?: boolean, float?: boolean, delay?: number, className?: string }} props
  */
 export function Fish({
-  variant = 'pink',
+  variant = 'blue',
   size = 80,
   flipX = false,
   float = true,
@@ -21,8 +25,7 @@ export function Fish({
   className = '',
 }) {
   const reduce = useReducedMotion()
-  const c = PRESETS[variant] ?? PRESETS.pink
-
+  const src = withBase(SRC[variant] ?? SRC.blue)
   const shouldFloat = float && !reduce
 
   return (
@@ -31,25 +34,14 @@ export function Fish({
       transition={shouldFloat ? { duration: 4.8, repeat: Infinity, ease: 'easeInOut', delay } : {}}
       className={className}
       aria-hidden="true"
-      style={{ display: 'inline-block', transform: flipX ? 'scaleX(-1)' : undefined }}
+      style={{ display: 'inline-block' }}
     >
-      <svg
-        width={size}
-        height={Math.round(size * 0.6)}
-        viewBox="0 0 100 60"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M72 30 C88 12 100 4 100 4 L94 30 L100 56 C100 56 88 48 72 30 Z"
-          fill={c.tail}
-          opacity="0.9"
-        />
-        <ellipse cx="40" cy="30" rx="36" ry="23" fill={c.body} />
-        <ellipse cx="29" cy="24" rx="13" ry="7.5" fill={c.shine} opacity="0.45" />
-        <circle cx="16" cy="27" r="4.5" fill="white" />
-        <circle cx="17" cy="27" r="2.6" fill="#010003" />
-        <circle cx="18" cy="26" r="1" fill="white" opacity="0.85" />
-      </svg>
+      <img
+        src={src}
+        alt=""
+        draggable="false"
+        style={{ width: size, height: 'auto', transform: flipX ? 'scaleX(-1)' : undefined }}
+      />
     </motion.div>
   )
 }

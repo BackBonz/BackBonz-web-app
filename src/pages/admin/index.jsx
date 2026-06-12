@@ -42,25 +42,25 @@ export default function AdminDashboard() {
               return (
                 <div
                   key={key}
-                  className="bg-white border border-gray-200 rounded-2xl p-5 flex flex-col gap-4"
+                  className="bg-white border border-divider rounded-2xl p-5 flex flex-col gap-4"
                 >
                   <div className="flex items-start gap-3">
                     <FileText size={20} className="text-denim mt-0.5 shrink-0" />
                     <div>
                       <p className="font-semibold text-foreground">{label}</p>
-                      <p className="text-xs text-gray-400 mt-0.5">{total} version{total !== 1 ? 's' : ''} uploaded</p>
+                      <p className="text-xs text-foreground-muted mt-0.5">{total} version{total !== 1 ? 's' : ''} uploaded</p>
                     </div>
                   </div>
 
                   {active ? (
-                    <div className="flex items-center gap-2 text-sm text-green-700 bg-green-50 rounded-lg px-3 py-2">
+                    <div className="flex items-center gap-2 text-sm text-denim bg-denim/10 rounded-lg px-3 py-2">
                       <CheckCircle size={14} className="shrink-0" />
                       <span className="truncate">
                         <strong>Active:</strong> {active.name}
                       </span>
                     </div>
                   ) : (
-                    <div className="flex items-center gap-2 text-sm text-amber-700 bg-amber-50 rounded-lg px-3 py-2">
+                    <div className="flex items-center gap-2 text-sm text-true-brown bg-yoke-100 rounded-lg px-3 py-2">
                       <AlertCircle size={14} className="shrink-0" />
                       No active document — public page shows fallback
                     </div>
@@ -77,7 +77,7 @@ export default function AdminDashboard() {
                       href={path}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-sm text-gray-400 hover:text-foreground transition-colors"
+                      className="text-sm text-foreground-muted hover:text-foreground transition-colors"
                     >
                       View public page ↗
                     </a>
