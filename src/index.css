@@ -6,57 +6,61 @@
    Regular and 600 maps to Bold via the weight ranges below. */
 @font-face {
   font-family: "Bianco Sans";
-  src: url("/fonts/Bianco_Sans/BiancoSans-Regular.woff2") format("woff2");
+  src: url("/fonts/Bianco_Sans/BiancoSans-Regular.woff2");
   font-weight: 400 500;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Bianco Sans";
-  src: url("/fonts/Bianco_Sans/BiancoSans-Italic.woff2") format("woff2");
+  src: url("/fonts/Bianco_Sans/BiancoSans-Italic.woff2");
   font-weight: 400 500;
   font-style: italic;
   font-display: swap;
 }
 @font-face {
   font-family: "Bianco Sans";
-  src: url("/fonts/Bianco_Sans/BiancoSans-Bold.woff2") format("woff2");
+  src: url("/fonts/Bianco_Sans/BiancoSans-Bold.woff2");
   font-weight: 600 700;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Bianco Sans";
-  src: url("/fonts/Bianco_Sans/BiancoSans-BoldItalic.woff2") format("woff2");
+  src: url("/fonts/Bianco_Sans/BiancoSans-BoldItalic.woff2");
   font-weight: 600 700;
   font-style: italic;
   font-display: swap;
 }
 @font-face {
   font-family: "Bianco Sans";
-  src: url("/fonts/Bianco_Sans/BiancoSans-ExtraBold.woff2") format("woff2");
+  src: url("/fonts/Bianco_Sans/BiancoSans-ExtraBold.woff2");
   font-weight: 800;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Bianco Sans";
-  src: url("/fonts/Bianco_Sans/BiancoSans-Heavy.woff2") format("woff2");
+  src: url("/fonts/Bianco_Sans/BiancoSans-Heavy.woff2");
   font-weight: 900;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Plakat";
-  src: url("/fonts/Plakat/Plakat.ttf.woff") format("woff");
+  src: url("/fonts/Plakat/Plakat.otf");
   font-weight: 400 900;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "HeadSurgery";
-  src: url("/fonts/HeadSurgery/HeadSurgery.ttf.woff") format("woff");
-  font-weight: 400 900;
+  /* Rebuilt with a clean cmap (original .ttf had a malformed subtable that
+     OTS/browsers reject, causing silent fallback to Plakat).
+     Single static weight (400) — declaring 400 only lets the browser
+     synthesize bold for `font-bold` headings. */
+  src: url("/fonts/HeadSurgery/headsurgery.woff2") format("woff2");
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }

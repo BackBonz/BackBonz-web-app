@@ -103,7 +103,7 @@ export default function Support() {
           </Badge>
           <h1
             id="support-hero-heading"
-            className="font-fun text-title-2 sm:text-title-1 text-foreground leading-tight max-w-2xl"
+            className="font-fun font-bold text-4xl sm:text-5xl md:text-6xl max-w-6xl text-foreground leading-tight max-w-2xl"
           >
             Support &amp; <Highlight color="pink">Help Center</Highlight>
           </h1>

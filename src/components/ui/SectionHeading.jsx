@@ -9,7 +9,7 @@ export function SectionHeading({ id, eyebrow, title, subtitle, centered = false,
           {eyebrow}
         </p>
       )}
-      <h2 id={id} className="font-fun text-title-2 sm:text-title-1 text-foreground leading-tight">
+      <h2 id={id} className="font-fun font-bold text-3xl sm:text-4xl md:text-5xl max-w-6xl text-foreground leading-tight">
         {title}
       </h2>
       {subtitle && (

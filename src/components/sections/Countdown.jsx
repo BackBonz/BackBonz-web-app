@@ -5,6 +5,7 @@ import { useCountdown } from '../../hooks/useCountdown'
 import { useSettings } from '../../lib/settings'
 import { formatLaunchDate } from '../../lib/format'
 import { Highlight } from '../ui/Highlight'
+import { Fish } from '../ui/illustrations/Fish'
 import { fadeUp } from '../../lib/motion'
 
 function Unit({ value, label, reduce }) {
@@ -57,6 +58,9 @@ export default function CountdownSection() {
         aria-hidden="true"
       />
 
+      <Fish variant="white"  size={62} delay={0.2} float       className="absolute top-8 left-6 sm:left-16 opacity-40 pointer-events-none" />
+      <Fish variant="orange" size={50} delay={1.3} float flipX className="absolute bottom-10 right-6 sm:right-16 opacity-40 pointer-events-none" />
+
       <Container className="relative z-10 text-center">
         <motion.div
           variants={fadeUp(reduce)}
@@ -73,7 +77,7 @@ export default function CountdownSection() {
             <Sparkles size={18} className="text-yoke" aria-hidden="true" />
           </div>
 
-          <h2 id="countdown-heading" className="font-fun text-title-2 sm:text-4xl text-white leading-tight">
+          <h2 id="countdown-heading" className="font-fun font-bold text-4xl sm:text-5xl md:text-6xl max-w-6xl text-white leading-tight">
             {isLive ? (
               'BackBonz is live! 🎉'
             ) : (

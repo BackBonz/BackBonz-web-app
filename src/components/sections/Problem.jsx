@@ -4,6 +4,7 @@ import { Container } from '../ui/Container'
 import { Card } from '../ui/Card'
 import { SectionHeading } from '../ui/SectionHeading'
 import { Highlight } from '../ui/Highlight'
+import { Fish } from '../ui/illustrations/Fish'
 import { staggerContainer, cardReveal } from '../../lib/motion'
 
 const problems = [
@@ -38,17 +39,20 @@ export default function Problem() {
 
   return (
     <section
-      className="py-20 sm:py-28 bg-rebel-pink-100"
+      className="py-20 sm:py-28 bg-rebel-pink-100 relative overflow-hidden"
       aria-labelledby="problem-heading"
     >
-      <Container>
+      <Fish variant="orange" size={56} delay={0.3} float       className="absolute top-12 left-6 sm:left-16 opacity-30 pointer-events-none" />
+      <Fish variant="blue"   size={48} delay={1.4} float flipX className="absolute bottom-10 right-6 sm:right-20 opacity-30 pointer-events-none" />
+
+      <Container className="relative z-10">
         <SectionHeading
           id="problem-heading"
           eyebrow="The Problem"
-          title={<>Braces are uncomfortable and <Highlight color="red">consistency is a challenge</Highlight></>}
+          title={<>Braces are <Highlight color="red">uncomfortable</Highlight> and <Highlight color="red">consistency</Highlight> is a challenge</>}
           subtitle="Teens with scoliosis face real barriers that current solutions ignore."
           centered
-          className="mb-14"
+          className="mb-14 "
         />
 
         <motion.div

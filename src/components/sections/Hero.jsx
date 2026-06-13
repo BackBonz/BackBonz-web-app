@@ -104,8 +104,12 @@ export default function Hero() {
     >
       {/* Floating fish */}
       <Fish variant="white"  size={96} delay={0}   float className="absolute top-10 right-6 sm:right-16 md:right-24 opacity-90 pointer-events-none" />
-      <Fish variant="blue"   size={72} delay={1.2} float flipX className="absolute bottom-28 left-4 sm:left-12 opacity-80 pointer-events-none" />
-      <Fish variant="orange" size={58} delay={0.7} float className="absolute top-36 left-8 sm:left-24 md:left-40 opacity-80 pointer-events-none" />
+      <Fish variant="blue"   size={96} delay={1.2} float flipX className="absolute bottom-28 left-4 sm:left-12 opacity-80 pointer-events-none" />
+      <Fish variant="orange" size={96} delay={0.7} float className="absolute top-36 left-8 sm:left-24 md:left-40 opacity-80 pointer-events-none" />
+
+      <Fish variant="orange"  size={96} delay={0}   float className="absolute top-150 right-6 sm:right-16 md:right-40 opacity-90 pointer-events-none" />
+      <Fish variant="blue"   size={96} delay={1.2} float flipX className="absolute bottom-28 left-4 sm:left-280 opacity-80 pointer-events-none" />
+      <Fish variant="white" size={96} delay={0.7} float className="absolute top-99 left-8 sm:left-24 md:left-130 opacity-80 pointer-events-none" />
 
       <Container className="relative z-10 py-20 sm:py-28 flex flex-col items-center text-center gap-8">
         {/* Coming soon badge */}
@@ -126,10 +130,10 @@ export default function Hero() {
           variants={fadeUp(reduce)}
           initial="hidden"
           animate="visible"
-          className="font-fun text-title-1 sm:text-4xl md:text-5xl text-foreground leading-tight max-w-3xl"
+          className="font-fun font-bold text-4xl sm:text-5xl md:text-6xl max-w-6xl text-foreground leading-tight "
         >
           Helping teens with scoliosis build{' '}
-          <Highlight color="pink">confidence</Highlight> and healthy
+          <Highlight color="pink">confidence</Highlight> and <Highlight color="pink">healthy</Highlight>
           brace-wear habits.
         </motion.h1>
 

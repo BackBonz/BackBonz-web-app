@@ -133,22 +133,6 @@ export default function HowItWorks() {
           className="mb-16"
         />
 
-        {/* Product loop connector — desktop only */}
-        <div
-          className="hidden lg:flex items-center justify-center gap-3 mb-10 text-xs font-semibold text-foreground-secondary tracking-wide"
-          aria-hidden="true"
-        >
-          {['Put on brace', 'Start timer', 'Fish swims', 'Build streak', 'Celebrate 🎉'].map((label, i, arr) => (
-            <span key={label} className="flex items-center gap-3">
-              <span className="px-3 py-1 rounded-full bg-background border border-divider shadow-sm">
-                {label}
-              </span>
-              {i < arr.length - 1 && (
-                <span className="text-foreground-tertiary text-base">→</span>
-              )}
-            </span>
-          ))}
-        </div>
 
         {/* Step grid */}
         <motion.div

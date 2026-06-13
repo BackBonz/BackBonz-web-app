@@ -12,6 +12,7 @@ import {
 import { Container } from '../ui/Container'
 import { SectionHeading } from '../ui/SectionHeading'
 import { Highlight } from '../ui/Highlight'
+import { Fish as SwimFish } from '../ui/illustrations/Fish'
 import { staggerContainer, cardReveal } from '../../lib/motion'
 
 const features = [
@@ -78,10 +79,13 @@ export default function Features() {
 
   return (
     <section
-      className="py-20 sm:py-28 bg-background"
+      className="py-20 sm:py-28 bg-background relative overflow-hidden"
       aria-labelledby="features-heading"
     >
-      <Container>
+      <SwimFish variant="white"  size={56} delay={0.4} float       className="absolute top-10 right-6 sm:right-20 opacity-25 pointer-events-none" />
+      <SwimFish variant="orange" size={46} delay={1.5} float flipX className="absolute bottom-12 left-6 sm:left-16 opacity-25 pointer-events-none" />
+
+      <Container className="relative z-10">
         <SectionHeading
           id="features-heading"
           eyebrow="Features"

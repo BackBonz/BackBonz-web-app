@@ -233,7 +233,7 @@ export function DocumentViewer({ doc }) {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4">
           {/* Title + date */}
           <div className="flex-1 min-w-0">
-            <h1 className="font-fun text-title-4 text-foreground leading-tight truncate">
+            <h1 className="font-fun font-bold text-4xl sm:text-5xl md:text-6xl max-w-6xl text-foreground leading-tight truncate">
               {doc.title}
             </h1>
             {doc.updatedAt && (
