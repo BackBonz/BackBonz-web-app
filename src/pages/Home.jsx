@@ -7,6 +7,7 @@ import Hero from '../components/sections/Hero'
 import Problem from '../components/sections/Problem'
 import HowItWorks from '../components/sections/HowItWorks'
 import Features from '../components/sections/Features'
+import Founder from '../components/sections/Founder'
 import Contact from '../components/sections/Contact'
 import { SITE } from '../config/site'
 
@@ -64,6 +65,7 @@ export default function Home() {
       <Problem />
       <HowItWorks />
       <Features />
+      <Founder />
       <Contact />
     </PageShell>
   )

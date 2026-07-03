@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom'
 import { RequireAdmin } from './lib/auth'
 
 const Home          = lazy(() => import('./pages/Home'))
+const About         = lazy(() => import('./pages/About'))
 const Support       = lazy(() => import('./pages/Support'))
 const Privacy       = lazy(() => import('./pages/Privacy'))
 const UserAgreement = lazy(() => import('./pages/UserAgreement'))
@@ -28,6 +29,7 @@ export default function App() {
       <Routes>
         {/* Public routes */}
         <Route path="/"               element={<Home />} />
+        <Route path="/about"          element={<About />} />
         <Route path="/support"        element={<Support />} />
         <Route path="/privacy"        element={<Privacy />} />
         <Route path="/user-agreement" element={<UserAgreement />} />

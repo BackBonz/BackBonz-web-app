@@ -12,6 +12,7 @@ export const SITE = {
   // Primary navigation (navbar). "Contact Us" jumps to the home contact form.
   nav: [
     { label: "Home", to: "/" },
+    { label: "About", to: "/about" },
     { label: "Support", to: "/support" },
     { label: "Contact Us", to: "/#contact" },
   ],
