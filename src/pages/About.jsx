@@ -123,7 +123,7 @@ export default function About() {
             >
               <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[108%] h-[108%] bg-rebel-pink-100 -rotate-2 rounded-3xl" />
               <img
-                src={founder(5)}
+                src={founder(1)}
                 alt="Alayna, founder of BackBonz"
                 className="w-full max-w-md aspect-[4/5] object-cover rounded-[32px] shadow-lg border-[12px] border-white rotate-1"
               />
