@@ -7,7 +7,7 @@ import { SITE } from '../../config/site'
 export function Seo({ title, description, image, path }) {
   const fullTitle = title
     ? `${title} — ${SITE.name}`
-    : `${SITE.name} — Brace Tracking for Teens with Scoliosis`
+    : `${SITE.name} — back-brace Tracking for Teens with Scoliosis`
   const desc = description || SITE.description
   const canonical = `${SITE.url}${path || ''}`
   const img = image || `${SITE.url}/og-image.png`
@@ -25,7 +25,7 @@ export function Seo({ title, description, image, path }) {
       <meta property="og:image" content={img} />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
-      <meta property="og:image:alt" content={`${SITE.name} — Brace Tracking for Teens`} />
+      <meta property="og:image:alt" content={`${SITE.name} — back-brace Tracking for Teens`} />
       <meta property="og:site_name" content={SITE.name} />
       <meta property="og:locale" content="en_US" />
 
@@ -34,7 +34,7 @@ export function Seo({ title, description, image, path }) {
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={desc} />
       <meta name="twitter:image" content={img} />
-      <meta name="twitter:image:alt" content={`${SITE.name} — Brace Tracking for Teens`} />
+      <meta name="twitter:image:alt" content={`${SITE.name} — back-brace Tracking for Teens`} />
     </Helmet>
   )
 }

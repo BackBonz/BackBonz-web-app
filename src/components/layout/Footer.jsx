@@ -61,7 +61,7 @@ export default function Footer() {
               <p className="text-xs font-semibold text-white/80 mb-1">Privacy at a glance</p>
               <p className="text-xs text-white/50 leading-relaxed">
                 BackBonz collects only what you give us — your contact message is emailed directly to our team and never stored in a database.
-                The app tracks brace wear-time locally on your device. No ads, no behavioral tracking, no data sold to third parties.
+                The app tracks back-brace wear-time locally on your device. No ads, no behavioral tracking, no data sold to third parties.
                 Children under 13 require parental consent.{' '}
                 <Link to="/privacy" className="text-rebel-pink hover:text-rebel-pink-300 underline underline-offset-2">
                   Full Privacy Policy →

@@ -87,7 +87,7 @@ export default function Support() {
     <PageShell>
       <Seo
         title="Support"
-        description="Get help with BackBonz — FAQ, brace timer guide, contact form, and data requests."
+        description="Get help with BackBonz — FAQ, back-brace timer guide, contact form, and data requests."
         path="/support"
       />
 
@@ -108,7 +108,7 @@ export default function Support() {
             Support &amp; <Highlight color="pink">Help Center</Highlight>
           </h1>
           <p className="text-body-lg text-foreground-secondary max-w-xl leading-relaxed">
-            Have a question about BackBonz, your brace tracker, or your account? We've got you
+            Have a question about BackBonz, your back-brace tracker, or your account? We've got you
             covered.
           </p>
         </Container>

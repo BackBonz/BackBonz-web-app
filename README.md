@@ -1,6 +1,6 @@
 # BackBonz — Marketing Website
 
-> **BackBonz** helps teens with scoliosis (ages 8–16) build healthy brace-wear habits through daily tracking, a fish companion that thrives on consistency, and streak-based rewards.
+> **BackBonz** helps teens with scoliosis (ages 8–16) build healthy back-brace-wear habits through daily tracking, a fish companion that thrives on consistency, and streak-based rewards.
 
 This repository contains the **public marketing website** for BackBonz — not the mobile app itself. It is a React SPA deployed on Vercel with a single serverless function for contact-form email delivery.
 
@@ -34,7 +34,7 @@ The site was built in five sequential milestones:
 | 4 | Design Polish | Lottie fish animations, app screenshots in HowItWorks, centralized Framer Motion system with `prefers-reduced-motion`, accessibility hardening |
 | 5 | Production hardening | SEO finalization, code-splitting, security headers (CSP), COPPA compliance note, Vercel deployment config, README |
 
-**Product loop** shown on site: *Put on brace → Start timer → Fish swims → Build streak → Celebrate 🎉*
+**Product loop** shown on site: *Put on back-brace → Start timer → Fish swims → Build streak → Celebrate 🎉*
 
 ---
 

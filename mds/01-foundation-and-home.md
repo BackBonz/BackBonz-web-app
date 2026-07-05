@@ -7,7 +7,7 @@
 
 ## ROLE
 
-You are a senior full-stack engineer, UI/UX designer, and product architect. Build a production-ready marketing website for **BackBonz**, a scoliosis brace-tracking mobile app for teens aged 8–16.
+You are a senior full-stack engineer, UI/UX designer, and product architect. Build a production-ready marketing website for **BackBonz**, a scoliosis back-brace-tracking mobile app for teens aged 8–16.
 
 This is **Section 1 of a 5-part build**. Your job in this section is to scaffold the whole project and ship a fully working, static, animated Home page. Later sections add dynamic document pages, Firebase, the admin panel, and final polish.
 
@@ -120,9 +120,9 @@ Add a custom `colors` extension with these EXACT hex values, plus the font famil
 ```js
 export const SITE = {
   name: "BackBonz",
-  tagline: "Helping teens with scoliosis build confidence and healthy brace-wear habits.",
+  tagline: "Helping teens with scoliosis build confidence and healthy back-brace-wear habits.",
   description:
-    "BackBonz helps teens with scoliosis build healthy brace-wear habits through tracking, motivation, and companion-based engagement.",
+    "BackBonz helps teens with scoliosis build healthy back-brace-wear habits through tracking, motivation, and companion-based engagement.",
   url: "https://backbonz.com", // adjust at deploy
   contactEmail: "admin.backbonz@gmail.com",
   launchDate: "2026-06-10T00:00:00", // June 10 countdown
@@ -142,7 +142,7 @@ export const SITE = {
 
 - Create a reusable `<Seo title description image path />` component in `src/lib/seo/` that sets `document.title` and injects/updates `<meta>` + OpenGraph + canonical tags (use a small effect, or install `react-helmet-async` — your call, prefer react-helmet-async).
 - Default metadata:
-  - Title: `BackBonz — Brace Tracking for Teens with Scoliosis`
+  - Title: `BackBonz — back-brace Tracking for Teens with Scoliosis`
   - Description: as in `SITE.description`
 - Create `public/robots.txt` (allow all, point to sitemap) and `public/sitemap.xml` (list `/`, `/support`, `/privacy`, `/user-agreement`).
 - **No `noindex` tags anywhere.** Add canonical URLs.
@@ -158,15 +158,15 @@ Compose these section components inside `src/components/sections/` and assemble 
 
 2. **Hero**
    - Emotional headline + supporting copy below.
-   - Suggested copy: "Helping teens with scoliosis build confidence and healthy brace-wear habits." then "BackBonz transforms brace tracking into a rewarding daily routine through motivation, progress tracking, and companion-based engagement."
+   - Suggested copy: "Helping teens with scoliosis build confidence and healthy back-brace-wear habits." then "BackBonz transforms back-brace tracking into a rewarding daily routine through motivation, progress tracking, and companion-based engagement."
    - Floating fish illustrations (use simple inline SVG fish — animate with Framer Motion float/bob).
    - App Store badge placeholder + Google Play badge placeholder (styled placeholder boxes).
    - CTA buttons. Animated soft-gradient background. "Coming Soon" messaging.
    - Embed the **June 10 countdown timer** (use `hooks/useCountdown.js`).
 
-3. **Problem** — three soft cards: brace-wearing is emotionally hard; manual tracking is frustrating; motivation drops over time.
+3. **Problem** — three soft cards: back-brace-wearing is emotionally hard; manual tracking is frustrating; motivation drops over time.
 
-4. **How It Works** — animated step cards / timeline: (1) Start your brace timer (2) Track your progress (3) Keep your fish swimming (4) Build streaks and rewards.
+4. **How It Works** — animated step cards / timeline: (1) Start your back-brace timer (2) Track your progress (3) Keep your fish swimming (4) Build streaks and rewards.
 
 5. **Features** — feature cards: Live timer tracking, Manual session entry, Fish companion, Streaks & rewards, Journaling, Daily goals, Progress tracking, Emotional support. Each with a Lucide icon.
 

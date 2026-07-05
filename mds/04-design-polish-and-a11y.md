@@ -22,7 +22,7 @@ The full site now functions: Home, Support, Privacy, User Agreement, admin panel
 
 - Create a small set of reusable inline-SVG **fish illustrations** (a few color variants from the palette) as React components in `components/ui/illustrations/`.
 - Animate them with Framer Motion: gentle floating/bobbing, occasional swim-across on the Hero, subtle parallax on scroll. Keep it performant (transform-only animations, `will-change` sparingly).
-- Use fish + bubbles motifs as connective tissue between sections (e.g., a fish "swims" the user from Hero → How It Works). Tie it to the product loop: Put on brace → Start timer → Fish swims → Build streak → Celebrate.
+- Use fish + bubbles motifs as connective tissue between sections (e.g., a fish "swims" the user from Hero → How It Works). Tie it to the product loop: Put on back-brace → Start timer → Fish swims → Build streak → Celebrate.
 - Add a small celebratory micro-interaction (confetti/bubbles) on form success and on the countdown hitting milestones.
 
 ## 3) MOTION SYSTEM

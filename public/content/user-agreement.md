@@ -18,7 +18,7 @@ If you do not agree to these terms, please do not use BackBonz.
 
 ## 2. Eligibility
 
-BackBonz is designed for users aged **8–16** who have been prescribed a scoliosis brace and their parents/guardians.
+BackBonz is designed for users aged **8–16** who have been prescribed a scoliosis back-brace and their parents/guardians.
 
 - Users aged **13–16** may create accounts with parent/guardian permission
 - Users **under 13** require verified parental consent before account creation
@@ -48,7 +48,7 @@ The consenting parent or guardian:
 
 ## 4. About BackBonz
 
-BackBonz is a **motivational wellness application** designed to help teens track brace-wear time, build healthy habits, and stay motivated through companion-based engagement.
+BackBonz is a **motivational wellness application** designed to help teens track back-brace-wear time, build healthy habits, and stay motivated through companion-based engagement.
 
 ### BackBonz Does NOT:
 - Provide medical advice, diagnosis, or treatment
@@ -125,7 +125,7 @@ To request a data export:
 2. Include the email address associated with your account
 3. We will provide your data in a common machine-readable format within **30 days**
 
-The export will include: account information, brace session logs, journal entries, and activity history.
+The export will include: account information, back-brace session logs, journal entries, and activity history.
 
 ---
 
@@ -147,9 +147,9 @@ BackBonz is a motivational tool, not a medical device.
 **We strongly recommend:**
 - Following your orthotist's prescribed daily wear-time goals
 - Attending all scheduled medical appointments
-- Consulting your healthcare team about any concerns with your brace treatment
+- Consulting your healthcare team about any concerns with your back-brace treatment
 
-The BackBonz brace timer is a self-reported tracking tool. We make no guarantee of accuracy. BackBonz session data is not a substitute for clinical assessment.
+The BackBonz back-brace timer is a self-reported tracking tool. We make no guarantee of accuracy. BackBonz session data is not a substitute for clinical assessment.
 
 ---
 

@@ -61,7 +61,7 @@ Build:
 - **Hero section** (friendly, on-brand).
 - **Contact details** (support email `admin.backbonz@gmail.com`, expected response time, "Coming Soon" note).
 - **FAQ accordion** (Framer Motion expand/collapse, keyboard accessible, aria-expanded). MUST include these questions with helpful teen/parent-friendly answers:
-  - How to use the brace timer
+  - How to use the back-brace timer
   - How parental consent works
   - How to request account deletion
   - How to request a data export

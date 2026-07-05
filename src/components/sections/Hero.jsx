@@ -134,7 +134,7 @@ export default function Hero() {
         >
           Helping teens with scoliosis build{' '}
           <Highlight color="pink">confidence</Highlight> and <Highlight color="pink">healthy</Highlight>
-          brace-wear habits.
+          back-brace-wear habits.
         </motion.h1>
 
         {/* Subtitle */}
@@ -145,7 +145,7 @@ export default function Hero() {
           transition={{ delay: 0.1 }}
           className="text-body-lg text-foreground-secondary max-w-xl leading-relaxed"
         >
-          BackBonz transforms brace tracking into a rewarding daily routine
+          BackBonz transforms back-brace tracking into a rewarding daily routine
           through motivation, progress tracking, and companion-based engagement.
         </motion.p>
 

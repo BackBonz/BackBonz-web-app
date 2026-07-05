@@ -18,12 +18,12 @@ export const DEFAULT_SETTINGS = {
 // {{email}} is replaced with the live support email at render time.
 export const DEFAULT_FAQS = [
   {
-    question: 'How do I use the brace timer?',
-    answer: `Using the brace timer is simple! Here's how:
+    question: 'How do I use the back-brace timer?',
+    answer: `Using the back-brace timer is simple! Here's how:
 
 1. Open BackBonz and tap the big **Start Timer** button on your dashboard.
-2. Put on your brace. The timer runs in the background — you don't need to keep the app open.
-3. When you take your brace off, open the app and tap **Stop Timer**.
+2. Put on your back-brace. The timer runs in the background — you don't need to keep the app open.
+3. When you take your back-brace off, open the app and tap **Stop Timer**.
 4. Your session is automatically saved and added to your daily progress.
 
 Forgot to start the timer? No problem — you can also add sessions manually from the **Sessions** tab by entering the start and end times.`,
@@ -58,7 +58,7 @@ To request your data export:
 2. Use the subject line: **"Data Export Request"**
 3. Include the email address associated with your account
 
-We will send a downloadable copy of your data in a common format within **30 days**. The export includes: account information, brace session logs, journal entries, and activity history.`,
+We will send a downloadable copy of your data in a common format within **30 days**. The export includes: account information, back-brace session logs, journal entries, and activity history.`,
   },
   {
     question: 'What are your privacy and data practices?',
@@ -66,7 +66,7 @@ We will send a downloadable copy of your data in a common format within **30 day
 
 - We **never sell** your data to advertisers or third parties.
 - The contact form **does not store** your message — it's delivered directly to our email and then discarded.
-- Brace session and journal data is stored securely and only accessible to you (and a parent/guardian for accounts under 13).
+- back-brace session and journal data is stored securely and only accessible to you (and a parent/guardian for accounts under 13).
 - We use Firebase (Google) for secure data storage, subject to their privacy policies.
 
 For full details, read our [Privacy Policy](/privacy) and [User Agreement](/user-agreement).`,

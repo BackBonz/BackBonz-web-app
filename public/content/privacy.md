@@ -21,7 +21,7 @@ We are committed to protecting the privacy of children and complying fully with 
 We collect information that users and parents/guardians voluntarily provide when:
 
 - Creating an account (username, age, parent/guardian email)
-- Using the brace timer and logging sessions
+- Using the back-brace timer and logging sessions
 - Writing journal entries
 - Contacting our support team
 
@@ -49,7 +49,7 @@ We do **not** collect:
 We use collected information solely to:
 
 - Operate and improve the BackBonz Service
-- Provide brace-tracking features, companion gameplay, and streak rewards
+- Provide back-brace-tracking features, companion gameplay, and streak rewards
 - Send in-app notifications related to daily goals (if enabled)
 - Respond to support inquiries
 - Ensure safety and prevent misuse

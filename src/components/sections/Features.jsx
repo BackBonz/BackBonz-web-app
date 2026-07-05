@@ -21,7 +21,7 @@ const features = [
     color: 'text-rebel-pink',
     bg: 'bg-rebel-pink-100',
     title: 'Live Timer Tracking',
-    body: 'One-tap start/stop brace timer that runs in the background. Never miss tracking a minute.',
+    body: 'One-tap start/stop back-brace timer that runs in the background. Never miss tracking a minute.',
   },
   {
     icon: PenLine,
@@ -35,7 +35,7 @@ const features = [
     color: 'text-denim',
     bg: 'bg-denim-300/20',
     title: 'Fish Companion',
-    body: 'Your fish friend grows, changes color, and evolves as your brace compliance improves.',
+    body: 'Your fish friend grows, changes color, and evolves as your back-brace compliance improves.',
   },
   {
     icon: Flame,

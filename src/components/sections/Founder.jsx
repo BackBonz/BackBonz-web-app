@@ -68,12 +68,12 @@ export default function Founder() {
                 <div className="bg-white p-4 rounded-sm shadow-[0_24px_50px_rgba(0,0,0,0.12)] border border-divider">
                   <img
                     src={founder(2)}
-                    alt="Alayna, founder of BackBonz"
+                    alt="Charlie, founder of BackBonz"
                     className="w-full aspect-[4/5] object-cover"
                   />
                   <div className="pt-5 pb-1 text-center">
                     <span className="font-fun font-bold text-xl text-rebel-pink block leading-none">
-                      Alayna
+                      Charlie
                     </span>
                     <span className="font-display text-xs font-semibold uppercase tracking-widest text-foreground-secondary mt-2 block">
                       Founder, BackBonz
@@ -107,12 +107,12 @@ export default function Founder() {
             >
               I created BackBonz to help kids and teens with scoliosis{' '}
               <Highlight color="yoke">feel more confident</Highlight>, supported, and in control of
-              their brace treatment.
+              their back-brace treatment.
             </h2>
 
             <div className="space-y-4 text-body-lg text-foreground-secondary leading-relaxed max-w-lg">
               <p>
-                Growing up with a scoliosis brace wasn't just about the physical adjustments — it was
+                Growing up with a scoliosis back-brace wasn't just about the physical adjustments — it was
                 about the mental hurdles. I realized that the journey doesn't have to be clinical or
                 lonely.
               </p>

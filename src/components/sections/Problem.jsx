@@ -12,7 +12,7 @@ const problems = [
     icon: HeartCrack,
     color: 'text-cherry-red',
     bg: 'bg-cherry-red-100',
-    title: 'Brace-wearing is emotionally hard',
+    title: 'back-brace-wearing is emotionally hard',
     body:
       "Teens face social stigma, discomfort, and self-consciousness every single day. Without support and acknowledgement, the emotional weight can feel overwhelming.",
   },
@@ -49,7 +49,7 @@ export default function Problem() {
         <SectionHeading
           id="problem-heading"
           eyebrow="The Problem"
-          title={<>Braces are <Highlight color="red">uncomfortable</Highlight> and <Highlight color="red">consistency</Highlight> is a challenge</>}
+          title={<>back-braces are <Highlight color="red">uncomfortable</Highlight> and <Highlight color="red">consistency</Highlight> is a challenge</>}
           subtitle="Teens with scoliosis face real barriers that current solutions ignore."
           centered
           className="mb-14 "

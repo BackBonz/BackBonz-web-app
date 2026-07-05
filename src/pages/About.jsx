@@ -26,7 +26,7 @@ const PILLARS = [
     title: 'Confidence',
     tone: 'bg-rebel-pink-100 text-rebel-pink',
     tilt: '',
-    body: 'Empowering teens to wear their braces with pride. We provide the tools to celebrate small wins and maintain a positive self-image throughout the journey.',
+    body: 'Empowering teens to wear their back-braces with pride. We provide the tools to celebrate small wins and maintain a positive self-image throughout the journey.',
   },
   {
     icon: LineChart,
@@ -51,7 +51,7 @@ export default function About() {
     <PageShell>
       <Seo
         title="About"
-        description="The story behind BackBonz — built by someone right there in the brace with you, to help teens with scoliosis feel confident, supported, and in control."
+        description="The story behind BackBonz — built by someone right there in the back-brace with you, to help teens with scoliosis feel confident, supported, and in control."
         path="/about"
       />
 
@@ -83,16 +83,16 @@ export default function About() {
         >
           <span className="inline-flex items-center gap-1.5 font-display text-sm font-semibold uppercase tracking-widest text-rebel-pink mb-6">
             <Sparkles size={14} aria-hidden="true" />
-            Founded by Alayna, Creator &amp; Advocate
+            Founded by Charlie, Creator &amp; Advocate
           </span>
           <h1
             id="about-hero-heading"
-            className="font-fun font-bold text-4xl sm:text-5xl md:text-6xl leading-tight mb-8"
+            className="font-display font-bold text-4xl sm:text-5xl md:text-6xl leading-tight mb-8"
           >
             I created BackBonz to help kids and teens with scoliosis feel more{' '}
             <span className="text-rebel-pink italic">confident</span>,{' '}
             <span className="text-rebel-pink italic">supported</span>, and in{' '}
-            <span className="text-rebel-pink italic">control</span> of their brace treatment.
+            <span className="text-rebel-pink italic">control</span> of their back-brace treatment.
           </h1>
           <p className="text-body-lg text-white/80 max-w-2xl mx-auto leading-relaxed">
             It should be simple, encouraging, and stress-free.
@@ -124,12 +124,12 @@ export default function About() {
               <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[108%] h-[108%] bg-rebel-pink-100 -rotate-2 rounded-3xl" />
               <img
                 src={founder(1)}
-                alt="Alayna, founder of BackBonz"
+                alt="Charlie, founder of BackBonz"
                 className="w-full max-w-md aspect-[4/5] object-cover rounded-[32px] shadow-lg border-[12px] border-white rotate-1"
               />
               <div className="absolute -bottom-6 right-2 sm:-right-6 bg-white p-5 rounded-3xl shadow-lg border border-divider">
                 <span className="font-fun font-bold text-2xl text-rebel-pink leading-none block">
-                  Alayna
+                  Charlie
                 </span>
                 <span className="font-display text-xs font-semibold uppercase tracking-widest text-foreground-secondary block mt-2">
                   Founder &amp; Advocate
@@ -147,14 +147,14 @@ export default function About() {
             >
               <SectionHeading
                 id="founder-heading"
-                eyebrow="The story behind the brace"
+                eyebrow="The story behind the back-brace"
                 title={<>More than just a <Highlight color="pink">tracking app.</Highlight></>}
                 className="mb-8"
               />
               <div className="space-y-5 text-body-lg text-foreground-secondary leading-relaxed">
                 <p>
                   When I was first diagnosed with scoliosis, my world felt like it was
-                  shifting — literally. The transition into wearing a brace wasn't just a physical
+                  shifting — literally. The transition into wearing a back-brace wasn't just a physical
                   change; it was an emotional journey that felt isolating and overwhelming at times.
                 </p>
                 <p>
@@ -166,9 +166,9 @@ export default function About() {
                 </p>
                 <p>
                   BackBonz was born out of that need. I wanted to build a space where wearing a
-                  brace doesn't define us, but where tracking our progress helps us reclaim our
+                  back-brace doesn't define us, but where tracking our progress helps us reclaim our
                   confidence. This community is built for us, by someone who is right there in the
-                  brace with you.
+                  back-brace with you.
                 </p>
                 <p className="font-fun font-bold text-2xl text-rebel-pink pt-2">
                   You've got this. We've got this.

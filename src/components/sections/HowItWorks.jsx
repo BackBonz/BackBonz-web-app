@@ -40,9 +40,9 @@ const steps = [
   {
     number: '01',
     cardBg: 'bg-rebel-pink-100/70',
-    title: 'Put on your brace',
+    title: 'Put on your back-brace',
     body: 'Tap once the moment you strap in. BackBonz logs your wear time automatically — no journaling, no fuss.',
-    visual: <PhoneFrame src={withBase('images/home_screen.png')} alt="BackBonz home screen showing the brace timer" />,
+    visual: <PhoneFrame src={withBase('images/home_screen.png')} alt="BackBonz home screen showing the back-brace timer" />,
   },
   {
     number: '02',
@@ -55,7 +55,7 @@ const steps = [
     number: '03',
     cardBg: 'bg-yoke-100/80',
     title: 'Keep your fish swimming',
-    body: 'Your fish companion lives or thrives based on your consistency. Wear your brace — watch it glow and level up.',
+    body: 'Your fish companion lives or thrives based on your consistency. Wear your back-brace — watch it glow and level up.',
     visual: (
       <div className="relative flex flex-col items-center justify-center h-[calc(160px*19.5/9)] mx-auto gap-2" style={{ width: 160 }}>
         <LottiePlayer
@@ -81,7 +81,7 @@ const steps = [
     number: '04',
     cardBg: 'bg-cherry-red-100/50',
     title: 'Build streaks & earn badges',
-    body: 'Unlock achievements, maintain streaks, and hit your daily wear goals. Brace day becomes a game you actually want to play.',
+    body: 'Unlock achievements, maintain streaks, and hit your daily wear goals. back-brace day becomes a game you actually want to play.',
     visual: <PhoneFrame src={withBase('images/account_screen.png')} alt="BackBonz account screen showing badges and streaks" />,
   },
 ]
@@ -128,7 +128,7 @@ export default function HowItWorks() {
           id="hiw-heading"
           eyebrow="How It Works"
           title={<>From first tap to <Highlight color="denim">first streak</Highlight></>}
-          subtitle="BackBonz makes brace-wear feel less like a chore and more like a daily adventure."
+          subtitle="BackBonz makes back-brace-wear feel less like a chore and more like a daily adventure."
           centered
           className="mb-16"
         />

@@ -1,7 +1,7 @@
 {
   "name": "BackBonz",
   "short_name": "BackBonz",
-  "description": "Brace tracking for teens with scoliosis",
+  "description": "Back-Brace tracking for teens with scoliosis",
   "start_url": ".",
   "scope": ".",
   "display": "standalone",

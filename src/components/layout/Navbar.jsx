@@ -45,7 +45,13 @@ export default function Navbar() {
           className="flex items-center hover:opacity-80 transition-opacity"
           aria-label="BackBonz — go to home"
         >
-          <img src={withBase('images/splash_logo.png')} alt="BackBonz" className="h-10 w-auto" />
+          <img
+            src={withBase('images/splash_logo.png')}
+            alt="BackBonz"
+            className={`w-auto transition-all duration-300 ease-out ${
+              scrolled ? 'h-10' : 'h-16'
+            }`}
+          />
         </Link>
 
         {/* Desktop links */}
