@@ -12,6 +12,7 @@ const AdminDashboard   = lazy(() => import('./pages/admin/index'))
 const AdminDocuments   = lazy(() => import('./pages/admin/documents'))
 const AdminMessages    = lazy(() => import('./pages/admin/messages'))
 const AdminFaq         = lazy(() => import('./pages/admin/faq'))
+const AdminStickers    = lazy(() => import('./pages/admin/stickers'))
 const AdminSettings    = lazy(() => import('./pages/admin/settings'))
 
 function RouteLoader() {
@@ -41,6 +42,7 @@ export default function App() {
           <Route path="/admin/documents" element={<AdminDocuments />} />
           <Route path="/admin/messages"  element={<AdminMessages />} />
           <Route path="/admin/faq"       element={<AdminFaq />} />
+          <Route path="/admin/stickers"  element={<AdminStickers />} />
           <Route path="/admin/settings"  element={<AdminSettings />} />
         </Route>
       </Routes>

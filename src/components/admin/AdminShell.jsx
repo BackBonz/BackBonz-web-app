@@ -1,5 +1,5 @@
 import { Link, NavLink, useNavigate } from 'react-router-dom'
-import { LogOut, FileText, LayoutDashboard, MessageSquare, HelpCircle, Settings } from 'lucide-react'
+import { LogOut, FileText, LayoutDashboard, MessageSquare, HelpCircle, Settings, Sticker } from 'lucide-react'
 import { useAuth } from '../../lib/auth'
 import { useToast } from './Toast'
 
@@ -38,6 +38,9 @@ export function AdminShell({ children }) {
             </AdminNavLink>
             <AdminNavLink to="/admin/faq" icon={<HelpCircle size={15} />}>
               FAQ
+            </AdminNavLink>
+            <AdminNavLink to="/admin/stickers" icon={<Sticker size={15} />}>
+              Stickers
             </AdminNavLink>
             <AdminNavLink to="/admin/settings" icon={<Settings size={15} />}>
               Settings

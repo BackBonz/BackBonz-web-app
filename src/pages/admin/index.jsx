@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
-import { FileText, CheckCircle, AlertCircle, ArrowRight } from 'lucide-react'
+import { FileText, CheckCircle, AlertCircle, ArrowRight, Sticker } from 'lucide-react'
 import { AdminShell } from '../../components/admin/AdminShell'
 import { getAllData } from '../../lib/uploads/documentsRepo'
+import { listStickers } from '../../lib/firestore/stickersRepo'
 
 const PAGES = [
   { key: 'privacy',       label: 'Privacy Policy',  path: '/privacy'        },
@@ -12,12 +13,19 @@ const PAGES = [
 
 export default function AdminDashboard() {
   const [data, setData] = useState(null)
+  const [stickerStats, setStickerStats] = useState(null)
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    getAllData()
-      .then(setData)
-      .finally(() => setLoading(false))
+    Promise.all([
+      getAllData().then(setData),
+      listStickers({ includeInactive: true })
+        .then((items) => {
+          const active = items.filter((s) => s.active !== false).length
+          setStickerStats({ active, total: items.length })
+        })
+        .catch(() => setStickerStats({ active: 0, total: 0 })),
+    ]).finally(() => setLoading(false))
   }, [])
 
   return (
@@ -85,6 +93,35 @@ export default function AdminDashboard() {
                 </div>
               )
             })}
+
+            <div className="bg-white border border-divider rounded-2xl p-5 flex flex-col gap-4">
+              <div className="flex items-start gap-3">
+                <Sticker size={20} className="text-denim mt-0.5 shrink-0" />
+                <div>
+                  <p className="font-semibold text-foreground">Stickers</p>
+                  <p className="text-xs text-foreground-muted mt-0.5">
+                    {stickerStats?.active ?? 0} active
+                    {stickerStats && stickerStats.total > stickerStats.active
+                      ? ` · ${stickerStats.total - stickerStats.active} hidden`
+                      : ''}
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-2 text-sm text-denim bg-denim/10 rounded-lg px-3 py-2">
+                <CheckCircle size={14} className="shrink-0" />
+                <span className="truncate">Unlock rewards shown in the app</span>
+              </div>
+
+              <div className="flex items-center gap-3 mt-auto">
+                <Link
+                  to="/admin/stickers"
+                  className="flex items-center gap-1 text-sm font-medium text-denim hover:underline"
+                >
+                  Manage <ArrowRight size={13} />
+                </Link>
+              </div>
+            </div>
           </div>
         )}
       </AdminShell>

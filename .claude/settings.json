@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx tsc *)",
+      "Bash(echo \"=== tsc exit: $? ===\")",
+      "Bash(npx eslint *)",
+      "Bash(echo \"=== eslint exit: $? ===\")",
+      "Bash(npx vite *)",
+      "Bash(flutter --version)",
+      "Bash(flutter pub *)",
+      "Bash(flutter analyze *)",
+      "Bash(firebase functions:secrets:access GMAIL_EMAIL)",
+      "Bash(firebase functions:secrets:access GMAIL_PASSWORD)"
+    ],
+    "additionalDirectories": [
+      "E:\\11th Consulting\\BackBonz App\\Project\\BackBonz-App\\lib\\shared\\widgets",
+      "E:\\11th Consulting\\BackBonz App\\Project\\BackBonz-App\\lib\\features\\journal\\presentation",
+      "E:\\11th Consulting\\BackBonz App\\Project\\BackBonz-App",
+      "E:\\11th Consulting\\BackBonz App\\Project\\BackBonz-App\\functions"
+    ]
+  }
+}
