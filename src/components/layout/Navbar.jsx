@@ -36,7 +36,9 @@ export default function Navbar() {
       }`}
     >
       <nav
-        className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between"
+        className={`max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between transition-all duration-300 ${
+          scrolled ? 'h-16' : 'h-28'
+        }`}
         aria-label="Main navigation"
       >
         {/* Logo */}
@@ -49,7 +51,7 @@ export default function Navbar() {
             src={withBase('images/splash_logo.png')}
             alt="BackBonz"
             className={`w-auto transition-all duration-300 ease-out ${
-              scrolled ? 'h-10' : 'h-32'
+              scrolled ? 'h-10' : 'h-24'
             }`}
           />
         </Link>

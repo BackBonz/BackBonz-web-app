@@ -14,10 +14,10 @@ const founder = (n) => withBase(`images/Founder_${n}.png`)
 
 // Scrapbook collage tiles for the hero backdrop.
 const COLLAGE = [
-  { src: founder(1), className: 'top-8 left-[1%] w-52 h-72 -rotate-6' },
-  { src: founder(2), className: 'bottom-8 left-[2%] w-56 h-56 rotate-3' },
-  { src: founder(3), className: 'top-16 right-[2%] w-56 h-72 rotate-6' },
-  { src: founder(4), className: 'bottom-16 right-[1%] w-52 h-72 -rotate-3' },
+  { src: founder(1), className: 'top-8 left-[3%] w-52 h-72 -rotate-6' },
+  { src: founder(2), className: 'bottom-8 left-[8%] w-56 h-56 rotate-3' },
+  { src: founder(3), className: 'top-16 right-[6%] w-56 h-72 rotate-6' },
+  { src: founder(4), className: 'bottom-16 right-[3%] w-52 h-72 -rotate-3' },
 ]
 
 const PILLARS = [
