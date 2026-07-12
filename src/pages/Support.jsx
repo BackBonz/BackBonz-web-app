@@ -5,7 +5,6 @@ import PageShell from '../components/layout/PageShell'
 import { Seo } from '../lib/seo/Seo'
 import { Container } from '../components/ui/Container'
 import { SectionHeading } from '../components/ui/SectionHeading'
-import { Badge } from '../components/ui/Badge'
 import { Highlight } from '../components/ui/Highlight'
 import { ContactForm } from '../components/forms/ContactForm'
 import { MarkdownRenderer } from '../lib/markdown/MarkdownRenderer'
@@ -97,10 +96,6 @@ export default function Support() {
         aria-labelledby="support-hero-heading"
       >
         <Container className="text-center flex flex-col items-center gap-4">
-          <Badge variant="pink">
-            <Sparkles size={12} aria-hidden="true" />
-            We're here to help
-          </Badge>
           <h1
             id="support-hero-heading"
             className="font-fun font-bold text-4xl sm:text-5xl md:text-6xl max-w-6xl text-foreground leading-tight max-w-2xl"

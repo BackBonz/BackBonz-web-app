@@ -49,7 +49,7 @@ export default function Navbar() {
             src={withBase('images/splash_logo.png')}
             alt="BackBonz"
             className={`w-auto transition-all duration-300 ease-out ${
-              scrolled ? 'h-10' : 'h-16'
+              scrolled ? 'h-10' : 'h-32'
             }`}
           />
         </Link>

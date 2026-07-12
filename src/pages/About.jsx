@@ -1,6 +1,6 @@
 import { motion, useReducedMotion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { Heart, LineChart, Users, Sparkles, ArrowRight } from 'lucide-react'
+import { Heart, LineChart, Users, ArrowRight } from 'lucide-react'
 import PageShell from '../components/layout/PageShell'
 import { Seo } from '../lib/seo/Seo'
 import { Container } from '../components/ui/Container'
@@ -14,10 +14,10 @@ const founder = (n) => withBase(`images/Founder_${n}.png`)
 
 // Scrapbook collage tiles for the hero backdrop.
 const COLLAGE = [
-  { src: founder(1), className: 'top-8 left-[4%] w-56 h-72 -rotate-6' },
-  { src: founder(2), className: 'bottom-8 left-[14%] w-64 h-64 rotate-3' },
-  { src: founder(3), className: 'top-16 right-[8%] w-64 h-80 rotate-6' },
-  { src: founder(4), className: 'bottom-16 right-[4%] w-56 h-72 -rotate-3' },
+  { src: founder(1), className: 'top-8 left-[1%] w-52 h-72 -rotate-6' },
+  { src: founder(2), className: 'bottom-8 left-[2%] w-56 h-56 rotate-3' },
+  { src: founder(3), className: 'top-16 right-[2%] w-56 h-72 rotate-6' },
+  { src: founder(4), className: 'bottom-16 right-[1%] w-52 h-72 -rotate-3' },
 ]
 
 const PILLARS = [
@@ -79,15 +79,11 @@ export default function About() {
           variants={fadeUp(reduce)}
           initial="hidden"
           animate="visible"
-          className="relative z-10 max-w-4xl text-center text-white"
+          className="relative z-10 max-w-2xl text-center text-white"
         >
-          <span className="inline-flex items-center gap-1.5 font-display text-sm font-semibold uppercase tracking-widest text-rebel-pink mb-6">
-            <Sparkles size={14} aria-hidden="true" />
-            Founded by Charlie, Creator &amp; Advocate
-          </span>
           <h1
             id="about-hero-heading"
-            className="font-display font-bold text-4xl sm:text-5xl md:text-6xl leading-tight mb-8"
+            className="font-display font-bold text-3xl sm:text-4xl md:text-5xl leading-tight mb-8"
           >
             I created BackBonz to help kids and teens with scoliosis feel more{' '}
             <span className="text-rebel-pink italic">confident</span>,{' '}

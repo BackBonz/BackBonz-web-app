@@ -1,5 +1,3 @@
-> **⚠ SAMPLE CONTENT — Replace before launch.** This is a placeholder Privacy Policy for development and review purposes only. Consult a qualified attorney before publishing.
-
 # Privacy Policy
 
 *Last Updated: May 1, 2026*

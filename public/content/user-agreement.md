@@ -1,5 +1,3 @@
-> **⚠ SAMPLE CONTENT — Replace before launch.** This is a placeholder User Agreement for development and review purposes only. Consult a qualified attorney before publishing.
-
 # User Agreement
 
 *Last Updated: May 1, 2026*

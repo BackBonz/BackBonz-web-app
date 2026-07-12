@@ -1,7 +1,6 @@
 import { motion, useReducedMotion } from 'framer-motion'
 import { Apple, Smartphone, Sparkles } from 'lucide-react'
 import { Button } from '../ui/Button'
-import { Badge } from '../ui/Badge'
 import { Container } from '../ui/Container'
 import { Highlight } from '../ui/Highlight'
 import { useCountdown } from '../../hooks/useCountdown'
@@ -112,18 +111,6 @@ export default function Hero() {
       <Fish variant="white" size={96} delay={0.7} float className="absolute top-99 left-8 sm:left-24 md:left-130 opacity-80 pointer-events-none" />
 
       <Container className="relative z-10 py-20 sm:py-28 flex flex-col items-center text-center gap-8">
-        {/* Coming soon badge */}
-        <motion.div
-          variants={fadeIn(reduce)}
-          initial="hidden"
-          animate="visible"
-        >
-          <Badge variant="pink">
-            <Sparkles size={12} aria-hidden="true" />
-            Coming Soon
-          </Badge>
-        </motion.div>
-
         {/* Headline */}
         <motion.h1
           id="hero-heading"
