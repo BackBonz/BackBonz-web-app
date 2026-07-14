@@ -10,7 +10,9 @@
       "Bash(flutter pub *)",
       "Bash(flutter analyze *)",
       "Bash(firebase functions:secrets:access GMAIL_EMAIL)",
-      "Bash(firebase functions:secrets:access GMAIL_PASSWORD)"
+      "Bash(firebase functions:secrets:access GMAIL_PASSWORD)",
+      "Bash(python -c \"import docx; d=docx.Document\\('Documents/USER_GUIDE.docx'\\); paras=[p.text for p in d.paragraphs if p.text.strip\\(\\)]; print\\('\\\\n'.join\\(paras[-25:]\\)\\)\")",
+      "Bash(python \"C:/Users/win10/AppData/Local/Temp/claude/e--11th-Consulting-BackBonz-Web/e7f1838d-1524-4a77-ad7b-8f36fd4ada27/scratchpad/gen_admin_guide.py\")"
     ],
     "additionalDirectories": [
       "E:\\11th Consulting\\BackBonz App\\Project\\BackBonz-App\\lib\\shared\\widgets",
