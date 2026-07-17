@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ChevronDown, Mail, Clock, Sparkles } from 'lucide-react'
+import { ChevronDown, Mail, Clock, Sparkles, Trash2, ArrowRight } from 'lucide-react'
 import PageShell from '../components/layout/PageShell'
 import { Seo } from '../lib/seo/Seo'
 import { Container } from '../components/ui/Container'
@@ -171,6 +172,33 @@ export default function Support() {
             {renderedFaqs.map((item, i) => (
               <FaqItem key={item.id ?? i} question={item.question} answer={item.answer} index={i} />
             ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* Account & data — delete account */}
+      <section className="py-12 bg-white border-t border-divider" aria-labelledby="account-data-heading">
+        <Container>
+          <div className="max-w-2xl mx-auto bg-cherry-red-100 rounded-3xl border border-cherry-red/20 p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center gap-5">
+            <div className="w-12 h-12 rounded-2xl bg-white flex items-center justify-center shrink-0">
+              <Trash2 size={22} className="text-cherry-red" aria-hidden="true" />
+            </div>
+            <div className="flex-1">
+              <h2 id="account-data-heading" className="font-display text-title-4 text-foreground mb-1">
+                Delete your account
+              </h2>
+              <p className="text-body text-foreground-secondary leading-relaxed">
+                Want to permanently delete your BackBonz account and all associated data? You can
+                request deletion and verify it yourself in a couple of steps.
+              </p>
+            </div>
+            <Link
+              to="/delete-account"
+              className="shrink-0 inline-flex items-center justify-center gap-2 font-medium rounded-2xl px-6 py-3 text-base bg-white text-cherry-red border border-cherry-red/20 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 focus-visible:ring-2 focus-visible:ring-cherry-red focus-visible:ring-offset-2"
+            >
+              Delete account
+              <ArrowRight size={16} aria-hidden="true" />
+            </Link>
           </div>
         </Container>
       </section>

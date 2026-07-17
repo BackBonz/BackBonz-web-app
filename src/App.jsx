@@ -5,6 +5,7 @@ import { RequireAdmin } from './lib/auth'
 const Home          = lazy(() => import('./pages/Home'))
 const About         = lazy(() => import('./pages/About'))
 const Support       = lazy(() => import('./pages/Support'))
+const DeleteAccount = lazy(() => import('./pages/DeleteAccount'))
 const Privacy       = lazy(() => import('./pages/Privacy'))
 const UserAgreement = lazy(() => import('./pages/UserAgreement'))
 const AdminLogin    = lazy(() => import('./pages/admin/login'))
@@ -32,6 +33,7 @@ export default function App() {
         <Route path="/"               element={<Home />} />
         <Route path="/about"          element={<About />} />
         <Route path="/support"        element={<Support />} />
+        <Route path="/delete-account" element={<DeleteAccount />} />
         <Route path="/privacy"        element={<Privacy />} />
         <Route path="/user-agreement" element={<UserAgreement />} />
 

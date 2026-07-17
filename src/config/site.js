@@ -20,6 +20,7 @@ export const SITE = {
   footerNav: [
     { label: "Home", to: "/" },
     { label: "Support", to: "/support" },
+    { label: "Delete Account", to: "/delete-account" },
     { label: "Privacy Policy", to: "/privacy" },
     { label: "User Agreement", to: "/user-agreement" },
   ],
