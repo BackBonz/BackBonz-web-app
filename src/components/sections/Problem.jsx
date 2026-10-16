@@ -20,7 +20,7 @@ const problems = [
     icon: ClipboardList,
     color: 'text-true-brown',
     bg: 'bg-true-brown-100',
-    title: 'Manual tracking is frustrating',
+    title: 'manual tracking is frustrating',
     body:
       "Paper logs and memory-based reporting are unreliable. Clinicians can't get accurate wear-time data, and teens lose motivation without feedback on their progress.",
   },
@@ -28,7 +28,7 @@ const problems = [
     icon: TrendingDown,
     color: 'text-denim',
     bg: 'bg-denim-300/20',
-    title: 'Motivation drops over time',
+    title: 'motivation drops over time',
     body:
       "Without rewards, streaks, or a reason to keep going, compliance falls off fast — especially during the years when consistent wear matters most.",
   },
