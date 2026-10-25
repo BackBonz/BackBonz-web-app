@@ -231,12 +231,6 @@ export default function About() {
               >
                 Get in touch
               </Link>
-              <Link
-                to="/support"
-                className="inline-flex items-center justify-center gap-2 font-medium rounded-2xl px-8 py-4 text-lg w-full sm:w-auto bg-white/10 text-white border border-white/40 hover:bg-white/20 hover:border-white/60 transition-all duration-200"
-              >
-                Visit support
-              </Link>
             </div>
           </div>
         </Container>
