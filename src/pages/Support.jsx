@@ -141,17 +141,6 @@ export default function Support() {
                 </p>
               </div>
             </div>
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-2xl bg-denim-300/20 flex items-center justify-center shrink-0">
-                <Sparkles size={18} className="text-denim" aria-hidden="true" />
-              </div>
-              <div>
-                <p className="text-xs text-foreground-muted uppercase tracking-wide">App status</p>
-                <p className="text-sm font-medium text-foreground">
-                  Coming {formatLaunchMonthYear(launchDate)}
-                </p>
-              </div>
-            </div>
           </div>
         </Container>
       </section>
