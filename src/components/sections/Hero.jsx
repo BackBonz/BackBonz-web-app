@@ -184,15 +184,6 @@ export default function Hero() {
           )}
           <Button
             as="a"
-            href="#contact"
-            variant={showBeta ? 'secondary' : 'primary'}
-            size="lg"
-            onClick={scrollToContact}
-          >
-            Get notified at launch
-          </Button>
-          <Button
-            as="a"
             href="#how-it-works"
             variant="ghost"
             size="lg"
