@@ -185,7 +185,7 @@ export default function Support() {
               to="/delete-account"
               className="shrink-0 inline-flex items-center justify-center gap-2 font-medium rounded-2xl px-6 py-3 text-base bg-white text-cherry-red border border-cherry-red/20 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 focus-visible:ring-2 focus-visible:ring-cherry-red focus-visible:ring-offset-2"
             >
-              Delete account
+              Want to delete your account?
               <ArrowRight size={16} aria-hidden="true" />
             </Link>
           </div>
