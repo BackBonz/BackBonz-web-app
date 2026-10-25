@@ -56,16 +56,21 @@ function CountdownMini({ launchDate }) {
 }
 
 /* ── App store badge ─────────────────────────────────────────────── */
-function AppBadge({ store, href }) {
+// With no store URL yet, the badge shows "Coming soon" and is not a link.
+  function AppBadge({ store, href }) {
   const isApple = store === 'apple'
   const label = isApple ? 'App Store' : 'Google Play'
+  const comingSoon = !href
+  const Tag = comingSoon ? 'div' : 'a'
+  const linkProps = comingSoon
+    ? { 'aria-label': `${label}: coming soon` }
+    : { href, target: '_blank', rel: 'noopener noreferrer', 'aria-label': `Download on the ${label}` }
   return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="flex items-center gap-3 px-5 py-3 rounded-2xl border-2 border-divider bg-white/80 hover:border-rebel-pink hover:shadow-md transition-all"
-      aria-label={`Download on the ${label}`}
+    <Tag
+      {...linkProps}
+      className={`flex items-center gap-3 px-5 py-3 rounded-2xl border-2 border-divider bg-white/80 transition-all ${
+        comingSoon ? 'opacity-80' : 'hover:border-rebel-pink hover:shadow-md'
+      }`}
     >
       {isApple ? (
         <Apple size={22} className="text-foreground" aria-hidden="true" />
@@ -74,11 +79,11 @@ function AppBadge({ store, href }) {
       )}
       <div className="text-left leading-tight">
         <p className="text-[10px] text-foreground-tertiary">
-          {isApple ? 'Download on the' : 'Get it on'}
+          {comingSoon ? 'Coming soon' : isApple ? 'Download on the' : 'Get it on'}
         </p>
         <p className="text-sm font-semibold text-foreground">{label}</p>
       </div>
-    </a>
+    </Tag>
   )
 }
 
@@ -93,7 +98,7 @@ export default function Hero() {
   } = useSettings()
 
   const appleVisible = showAppStore && appStoreUrl
-  const googleVisible = showPlayStore && playStoreUrl
+  const googleVisible = showPlayStore
   const anyBadge = appleVisible || googleVisible
 
   return (
